@@ -1,0 +1,171 @@
+D:\SrinivasMP\Projects\AMT\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.deps.json
+D:\SrinivasMP\Projects\AMT\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.runtimeconfig.json
+D:\SrinivasMP\Projects\AMT\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.runtimeconfig.dev.json
+D:\SrinivasMP\Projects\AMT\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.dll
+D:\SrinivasMP\Projects\AMT\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.pdb
+D:\SrinivasMP\Projects\AMT\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\InterfaceCore.dll
+D:\SrinivasMP\Projects\AMT\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ModelCore.dll
+D:\SrinivasMP\Projects\AMT\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\InterfaceCore.pdb
+D:\SrinivasMP\Projects\AMT\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ModelCore.pdb
+D:\SrinivasMP\Projects\AMT\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csprojAssemblyReference.cache
+D:\SrinivasMP\Projects\AMT\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csproj.CoreCompileInputs.cache
+D:\SrinivasMP\Projects\AMT\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorAssemblyInfo.cache
+D:\SrinivasMP\Projects\AMT\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorAssemblyInfo.cs
+D:\SrinivasMP\Projects\AMT\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.AssemblyInfoInputs.cache
+D:\SrinivasMP\Projects\AMT\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.AssemblyInfo.cs
+D:\SrinivasMP\Projects\AMT\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorTargetAssemblyInfo.cache
+D:\SrinivasMP\Projects\AMT\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csproj.CopyComplete
+D:\SrinivasMP\Projects\AMT\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.dll
+D:\SrinivasMP\Projects\AMT\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.pdb
+E:\HRMS\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.deps.json
+E:\HRMS\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.runtimeconfig.json
+E:\HRMS\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.runtimeconfig.dev.json
+E:\HRMS\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.dll
+E:\HRMS\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.pdb
+E:\HRMS\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\InterfaceCore.dll
+E:\HRMS\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ModelCore.dll
+E:\HRMS\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\InterfaceCore.pdb
+E:\HRMS\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ModelCore.pdb
+E:\HRMS\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csprojAssemblyReference.cache
+E:\HRMS\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csproj.CoreCompileInputs.cache
+E:\HRMS\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorAssemblyInfo.cache
+E:\HRMS\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorAssemblyInfo.cs
+E:\HRMS\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.AssemblyInfoInputs.cache
+E:\HRMS\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.AssemblyInfo.cs
+E:\HRMS\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorTargetAssemblyInfo.cache
+E:\HRMS\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csproj.CopyComplete
+E:\HRMS\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.dll
+E:\HRMS\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.pdb
+E:\Developers\Huda_Doha\1_18_19\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.deps.json
+E:\Developers\Huda_Doha\1_18_19\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.runtimeconfig.json
+E:\Developers\Huda_Doha\1_18_19\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.runtimeconfig.dev.json
+E:\Developers\Huda_Doha\1_18_19\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.dll
+E:\Developers\Huda_Doha\1_18_19\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.pdb
+E:\Developers\Huda_Doha\1_18_19\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\InterfaceCore.dll
+E:\Developers\Huda_Doha\1_18_19\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ModelCore.dll
+E:\Developers\Huda_Doha\1_18_19\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\InterfaceCore.pdb
+E:\Developers\Huda_Doha\1_18_19\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ModelCore.pdb
+E:\Developers\Huda_Doha\1_18_19\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csprojAssemblyReference.cache
+E:\Developers\Huda_Doha\1_18_19\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csproj.CoreCompileInputs.cache
+E:\Developers\Huda_Doha\1_18_19\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorAssemblyInfo.cache
+E:\Developers\Huda_Doha\1_18_19\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorAssemblyInfo.cs
+E:\Developers\Huda_Doha\1_18_19\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.AssemblyInfoInputs.cache
+E:\Developers\Huda_Doha\1_18_19\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.AssemblyInfo.cs
+E:\Developers\Huda_Doha\1_18_19\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorTargetAssemblyInfo.cache
+E:\Developers\Huda_Doha\1_18_19\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csproj.CopyComplete
+E:\Developers\Huda_Doha\1_18_19\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.dll
+E:\Developers\Huda_Doha\1_18_19\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.pdb
+E:\Developers\Huda_Doha\1_21_19\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.deps.json
+E:\Developers\Huda_Doha\1_21_19\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.runtimeconfig.json
+E:\Developers\Huda_Doha\1_21_19\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.runtimeconfig.dev.json
+E:\Developers\Huda_Doha\1_21_19\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.dll
+E:\Developers\Huda_Doha\1_21_19\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.pdb
+E:\Developers\Huda_Doha\1_21_19\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\InterfaceCore.dll
+E:\Developers\Huda_Doha\1_21_19\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ModelCore.dll
+E:\Developers\Huda_Doha\1_21_19\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\InterfaceCore.pdb
+E:\Developers\Huda_Doha\1_21_19\WebAPI\ConcreteCore\bin\Debug\netcoreapp2.1\ModelCore.pdb
+E:\Developers\Huda_Doha\1_21_19\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csprojAssemblyReference.cache
+E:\Developers\Huda_Doha\1_21_19\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csproj.CoreCompileInputs.cache
+E:\Developers\Huda_Doha\1_21_19\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorAssemblyInfo.cache
+E:\Developers\Huda_Doha\1_21_19\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorAssemblyInfo.cs
+E:\Developers\Huda_Doha\1_21_19\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.AssemblyInfoInputs.cache
+E:\Developers\Huda_Doha\1_21_19\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.AssemblyInfo.cs
+E:\Developers\Huda_Doha\1_21_19\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorTargetAssemblyInfo.cache
+E:\Developers\Huda_Doha\1_21_19\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csproj.CopyComplete
+E:\Developers\Huda_Doha\1_21_19\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.dll
+E:\Developers\Huda_Doha\1_21_19\WebAPI\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.pdb
+E:\Developers\Huda_Doha\1_21_19\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.deps.json
+E:\Developers\Huda_Doha\1_21_19\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.runtimeconfig.json
+E:\Developers\Huda_Doha\1_21_19\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.runtimeconfig.dev.json
+E:\Developers\Huda_Doha\1_21_19\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.dll
+E:\Developers\Huda_Doha\1_21_19\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.pdb
+E:\Developers\Huda_Doha\1_21_19\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\InterfaceCore.dll
+E:\Developers\Huda_Doha\1_21_19\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ModelCore.dll
+E:\Developers\Huda_Doha\1_21_19\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\InterfaceCore.pdb
+E:\Developers\Huda_Doha\1_21_19\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ModelCore.pdb
+E:\Developers\Huda_Doha\1_21_19\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csprojAssemblyReference.cache
+E:\Developers\Huda_Doha\1_21_19\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csproj.CoreCompileInputs.cache
+E:\Developers\Huda_Doha\1_21_19\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorAssemblyInfo.cache
+E:\Developers\Huda_Doha\1_21_19\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorAssemblyInfo.cs
+E:\Developers\Huda_Doha\1_21_19\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.AssemblyInfoInputs.cache
+E:\Developers\Huda_Doha\1_21_19\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.AssemblyInfo.cs
+E:\Developers\Huda_Doha\1_21_19\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorTargetAssemblyInfo.cache
+E:\Developers\Huda_Doha\1_21_19\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csproj.CopyComplete
+E:\Developers\Huda_Doha\1_21_19\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.dll
+E:\Developers\Huda_Doha\1_21_19\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.pdb
+E:\HRMS2\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.deps.json
+E:\HRMS2\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.runtimeconfig.json
+E:\HRMS2\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.runtimeconfig.dev.json
+E:\HRMS2\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.dll
+E:\HRMS2\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.pdb
+E:\HRMS2\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\InterfaceCore.dll
+E:\HRMS2\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ModelCore.dll
+E:\HRMS2\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\InterfaceCore.pdb
+E:\HRMS2\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ModelCore.pdb
+E:\HRMS2\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csprojAssemblyReference.cache
+E:\HRMS2\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csproj.CoreCompileInputs.cache
+E:\HRMS2\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorAssemblyInfo.cache
+E:\HRMS2\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorAssemblyInfo.cs
+E:\HRMS2\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.AssemblyInfoInputs.cache
+E:\HRMS2\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.AssemblyInfo.cs
+E:\HRMS2\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorTargetAssemblyInfo.cache
+E:\HRMS2\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csproj.CopyComplete
+E:\HRMS2\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.dll
+E:\HRMS2\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.pdb
+D:\Nour_HRMS\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.deps.json
+D:\Nour_HRMS\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.runtimeconfig.json
+D:\Nour_HRMS\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.runtimeconfig.dev.json
+D:\Nour_HRMS\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.dll
+D:\Nour_HRMS\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.pdb
+D:\Nour_HRMS\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\InterfaceCore.dll
+D:\Nour_HRMS\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ModelCore.dll
+D:\Nour_HRMS\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\InterfaceCore.pdb
+D:\Nour_HRMS\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ModelCore.pdb
+D:\Nour_HRMS\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csprojAssemblyReference.cache
+D:\Nour_HRMS\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csproj.CoreCompileInputs.cache
+D:\Nour_HRMS\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorAssemblyInfo.cache
+D:\Nour_HRMS\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorAssemblyInfo.cs
+D:\Nour_HRMS\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.AssemblyInfoInputs.cache
+D:\Nour_HRMS\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.AssemblyInfo.cs
+D:\Nour_HRMS\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorTargetAssemblyInfo.cache
+D:\Nour_HRMS\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csproj.CopyComplete
+D:\Nour_HRMS\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.dll
+D:\Nour_HRMS\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.pdb
+E:\Working Space\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csprojAssemblyReference.cache
+E:\Working Space\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csproj.CoreCompileInputs.cache
+E:\Working Space\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorAssemblyInfo.cache
+E:\Working Space\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorAssemblyInfo.cs
+E:\Working Space\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.AssemblyInfoInputs.cache
+E:\Working Space\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.AssemblyInfo.cs
+E:\Working Space\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.dll
+E:\Working Space\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.pdb
+E:\Working Space\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.deps.json
+E:\Working Space\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.runtimeconfig.json
+E:\Working Space\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.runtimeconfig.dev.json
+E:\Working Space\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.dll
+E:\Working Space\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.pdb
+E:\Working Space\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\InterfaceCore.dll
+E:\Working Space\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ModelCore.dll
+E:\Working Space\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\InterfaceCore.pdb
+E:\Working Space\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ModelCore.pdb
+E:\Working Space\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorTargetAssemblyInfo.cache
+E:\Working Space\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csproj.CopyComplete
+C:\Users\pc\Desktop\WorkSpace\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.deps.json
+C:\Users\pc\Desktop\WorkSpace\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.runtimeconfig.json
+C:\Users\pc\Desktop\WorkSpace\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.runtimeconfig.dev.json
+C:\Users\pc\Desktop\WorkSpace\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.dll
+C:\Users\pc\Desktop\WorkSpace\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ConcreteCore.pdb
+C:\Users\pc\Desktop\WorkSpace\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\InterfaceCore.dll
+C:\Users\pc\Desktop\WorkSpace\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ModelCore.dll
+C:\Users\pc\Desktop\WorkSpace\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\InterfaceCore.pdb
+C:\Users\pc\Desktop\WorkSpace\WebAPI - Rem\ConcreteCore\bin\Debug\netcoreapp2.1\ModelCore.pdb
+C:\Users\pc\Desktop\WorkSpace\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csprojAssemblyReference.cache
+C:\Users\pc\Desktop\WorkSpace\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csproj.CoreCompileInputs.cache
+C:\Users\pc\Desktop\WorkSpace\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorAssemblyInfo.cache
+C:\Users\pc\Desktop\WorkSpace\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorAssemblyInfo.cs
+C:\Users\pc\Desktop\WorkSpace\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.AssemblyInfoInputs.cache
+C:\Users\pc\Desktop\WorkSpace\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.AssemblyInfo.cs
+C:\Users\pc\Desktop\WorkSpace\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.RazorTargetAssemblyInfo.cache
+C:\Users\pc\Desktop\WorkSpace\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.csproj.CopyComplete
+C:\Users\pc\Desktop\WorkSpace\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.dll
+C:\Users\pc\Desktop\WorkSpace\WebAPI - Rem\ConcreteCore\obj\Debug\netcoreapp2.1\ConcreteCore.pdb
