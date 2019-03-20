@@ -461,37 +461,12 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
             try
             {
 
-                //SQLResult lMobileResult = new SQLResult();
-                //MobileConcrete mobileConcrete = new MobileConcrete();
-                //lMobileResult = await mobileConcrete.Create(pModel.MobileDetail, _Context,pModel.AuditColumns);
-
-                //SQLResult lAddressResult = new SQLResult();
-                //AddressConcrete addressConcrete = new AddressConcrete();
-                //lAddressResult = await addressConcrete.Create(pModel.AddressDetail, _Context, pModel.AuditColumns);
-
-                //SQLResult lEmailResult = new SQLResult();
-                //EmailConcrete emailConcrete = new EmailConcrete();
-                //lEmailResult = await emailConcrete.Create(pModel.EmailDetail, _Context, pModel.AuditColumns);
-
+               
                 SQLResult lContactResult = new SQLResult();
                 ContactConcrete contactConcrete = new ContactConcrete();
                 lContactResult = await contactConcrete.Create(pModel.ContactDetail, _Context, pModel.AuditColumns);
 
-                //if (lMobileResult.ErrorNo != 0)
-                //{
-                //    _Context.Database.RollbackTransaction();
-                //    return lMobileResult;
-                //}
-                //if (lAddressResult.ErrorNo != 0)
-                //{
-                //    _Context.Database.RollbackTransaction();
-                //    return lAddressResult;
-                //}
-                //if (lEmailResult.ErrorNo != 0)
-                //{
-                //    _Context.Database.RollbackTransaction();
-                //    return lEmailResult;
-                //}
+                
                 if (lContactResult.ErrorNo != 0)
                 {
                     _Context.Database.RollbackTransaction();
@@ -734,7 +709,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetInt64(10, item.Gender);
                     pRow.SetInt64(11, item.MaritalStatus);
                     pRow.SetInt32(12, item.NumberOfFamilyMembers);    
-                    pRow.SetInt64(13, item.ContactId);
+                    pRow.SetInt64(13, lContactResult.ID);
                     pRow.SetBoolean(14, item.Active);
                     pRow.SetBoolean(15, item.Deleted);
                     pRow.SetInt32(16, (int)item.EntryStatus);
@@ -1039,8 +1014,9 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                 //lEmailResult = await emailConcrete.Edit(pModel.EmailDetail, _Context, pModel.AuditColumns, true);
 
                 SQLResult lContactResult = new SQLResult();
-                //ContactConcrete contactConcrete = new ContactConcrete();
-                //lContactResult = await contactConcrete.Create(pModel.ContactDetail, _Context, pModel.AuditColumns);
+                ContactConcrete contactConcrete = new ContactConcrete();
+             
+                lContactResult = await contactConcrete.Edit(pModel.ContactDetail, _Context, pModel.AuditColumns,pModel.Active);
 
                 //if (lMobileResult.ErrorNo != 0)
                 //{
@@ -1057,11 +1033,11 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                 //    _Context.Database.RollbackTransaction();
                 //    return lEmailResult;
                 ////}
-                //if (lContactResult.ErrorNo != 0)
-                //{
-                //    _Context.Database.RollbackTransaction();
-                //    return lContactResult;
-                //}
+                if (lContactResult.ErrorNo != 0)
+                {
+                    _Context.Database.RollbackTransaction();
+                    return lContactResult;
+                }
                 // typ_mHRMSEmpEducationtable type parameter declartaion with parameter name and table type name
                 SqlParameter ptyp_mHRMSEmpEducationParameter = new SqlParameter("@pi_typ_mHRMSEmpEducation", SqlDbType.Structured)
                 {

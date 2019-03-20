@@ -97,7 +97,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
         public async Task<SQLResult> Edit(List<PhoneDetail> pModel, DatabaseContext _Context, AuditColumns auditColumns, bool Active)
         {
             SQLResult result = new SQLResult();
-        _Context.Database.BeginTransaction();
+     
 try
 {
                 // typ_mPhoneDetailtable type parameter declartaion with parameter name and table type name

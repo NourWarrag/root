@@ -102,7 +102,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                    lMobileResult = await mobileConcrete.Create(item.MobileDetail, _Context, auditColumns);
                     if (lMobileResult.ErrorNo != 0)
                     {
-                       // _Context.Database.RollbackTransaction();
+                       
                         return lMobileResult;
                     }
 
@@ -111,7 +111,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     lAddressResult = await addressConcrete.Create(item.AddressDetail, _Context, auditColumns);
                     if (lAddressResult.ErrorNo != 0)
                     {
-                      //  _Context.Database.RollbackTransaction();
+                    
                         return lAddressResult;
                     }
 
@@ -121,7 +121,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     lEmailResult = await emailConcrete.Create(item.EmailDetail, _Context, auditColumns);
                     if (lEmailResult.ErrorNo != 0)
                     {
-                   //     _Context.Database.RollbackTransaction();
+                  
                         return lEmailResult;
                     }
 
@@ -130,7 +130,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     lPhoneResult = await phoneConcrete.Create(item.PhoneDetail, _Context, auditColumns);
                     if (lPhoneResult.ErrorNo != 0)
                     {
-                   //     _Context.Database.RollbackTransaction();
+                
                         return lPhoneResult;
                     }
 
@@ -162,7 +162,6 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetString(6, item.Designation);
                     pRow.SetInt64(7, lAddressResult.ID);
                     pRow.SetInt64(8, lPhoneResult.ID);
-                    //pRow.SetInt64(9, item.MobileId);
                     pRow.SetInt64(9, lMobileResult.ID);
                     pRow.SetInt64(10, lEmailResult.ID);
                     pRow.SetBoolean(11, item.Default);
@@ -210,7 +209,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
             AuditColumns auditColumns,bool Active)
         {
             SQLResult result = new SQLResult();
-           // _Context.Database.BeginTransaction();
+        
             try
             {
                 // typ_mContactDetailtable type parameter declartaion with parameter name and table type name
@@ -224,37 +223,39 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                 {
                     SQLResult lMobileResult = new SQLResult();
                     MobileConcrete mobileConcrete = new MobileConcrete();
-                   // lMobileResult = await mobileConcrete.Edit(item.MobileDetail, _Context, auditColumns,Active);
+                    lMobileResult = await mobileConcrete.Edit(item.MobileDetail, _Context, auditColumns,Active);
+                    if (lMobileResult.ErrorNo != 0)
+                    {
+
+                        return lMobileResult;
+                    }
+
 
                     SQLResult lAddressResult = new SQLResult();
                     AddressConcrete addressConcrete = new AddressConcrete();
-                   // lAddressResult = await addressConcrete.Edit(item.AddressDetail, _Context, auditColumns,Active);
+                    lAddressResult = await addressConcrete.Edit(item.AddressDetail, _Context, auditColumns,Active);
+                    if (lAddressResult.ErrorNo != 0)
+                    {
+
+                        return lAddressResult;
+                    }
 
                     SQLResult lEmailResult = new SQLResult();
                     EmailConcrete emailConcrete = new EmailConcrete();
-                    //lEmailResult = await emailConcrete.Edit(item.EmailDetail, _Context, auditColumns,Active);
+                    lEmailResult = await emailConcrete.Edit(item.EmailDetail, _Context, auditColumns,Active);
+
+                    if (lEmailResult.ErrorNo != 0)
+                    {
+
+                        return lEmailResult;
+                    }
 
                     SQLResult lPhoneResult = new SQLResult();
                     PhoneConcrete phoneConcrete = new PhoneConcrete();
-                    //lPhoneResult = await phoneConcrete.Edit(item.PhoneDetail, _Context, auditColumns, Active);
-                    if (lMobileResult.ErrorNo != 0)
-                    {
-                        _Context.Database.RollbackTransaction();
-                        return lMobileResult;
-                    }
-                    if (lAddressResult.ErrorNo != 0)
-                    {
-                        _Context.Database.RollbackTransaction();
-                        return lAddressResult;
-                    }
-                    if (lEmailResult.ErrorNo != 0)
-                    {
-                        _Context.Database.RollbackTransaction();
-                        return lEmailResult;
-                    }
+                    lPhoneResult = await phoneConcrete.Edit(item.PhoneDetail, _Context, auditColumns, Active);
                     if (lPhoneResult.ErrorNo != 0)
                     {
-                        _Context.Database.RollbackTransaction();
+                   
                         return lPhoneResult;
                     }
 
@@ -269,6 +270,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                                                 , new SqlMetaData("Designation", SqlDbType.NVarChar, 100)
                                                 , new SqlMetaData("mAddressId", SqlDbType.BigInt)
                                                 , new SqlMetaData("mPhoneId", SqlDbType.BigInt)
+                                                , new SqlMetaData("mMobileId", SqlDbType.BigInt)
                                                 , new SqlMetaData("mEmailId", SqlDbType.BigInt)
                                                 , new SqlMetaData("Default", SqlDbType.Bit)
                                                 , new SqlMetaData("Active", SqlDbType.Bit)
@@ -284,12 +286,13 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetString(5, item.ContactName);
                     pRow.SetString(6, item.Designation);
                     pRow.SetInt64(7, item.AddressId);
-                    pRow.SetInt64(8, item.PhoneId);
-                    pRow.SetInt64(9, item.EmailId);
-                    pRow.SetBoolean(10, item.Default);
-                    pRow.SetBoolean(11, item.Active);
-                    pRow.SetBoolean(12, item.Deleted);
-                    pRow.SetInt32(13,(int) item.EntryStatus);
+                    pRow.SetInt64(8, item.PhoneId);     
+                    pRow.SetInt64(9, item.MobileId);
+                    pRow.SetInt64(10, item.EmailId);
+                    pRow.SetBoolean(11, item.Default);
+                    pRow.SetBoolean(12, item.Active);
+                    pRow.SetBoolean(13, item.Deleted);
+                    pRow.SetInt32(14,(int) item.EntryStatus);
 
                     pRowCollection_typ_mContactDetail.Add(pRow);
                 }
