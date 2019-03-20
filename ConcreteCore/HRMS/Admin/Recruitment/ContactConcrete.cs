@@ -14,6 +14,73 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
 {
     public class ContactConcrete
     {
+
+        //DatabaseContext _Context;
+        //public ContactConcrete(DatabaseContext context)
+        //{
+        //    _Context = context;
+        //}
+
+        //public async Task<C> GetEntry(Int64 Id)
+
+        //{
+
+        //    try
+        //    {
+
+        //        ContactEntry mPageData = await _Context.GetContactEntry.FromSql(
+
+        //             @"EXEC spmContactEntry @pi_Id, @pi_mContactId",
+
+        //               new SqlParameter("pi_Id", 1)
+
+        //             , new SqlParameter("pi_mContactId", Id)).SingleOrDefaultAsync();
+
+        //        mPageData.ContactDetail = await _Context.GetContactDetail.FromSql(
+
+        //            @"EXEC spmContactEntry @pi_Id, @pi_mContactId",
+
+        //              new SqlParameter("pi_Id", 1)
+
+        //            , new SqlParameter("pi_mContactId", Id)).ToListAsync();
+
+        //        mPageData.AddressDetail = await _Context.GetAddressDetail.FromSql(
+
+        //            @"EXEC spmContactEntry @pi_Id, @pi_mContactId",
+
+        //              new SqlParameter("pi_Id", 5)
+
+        //            , new SqlParameter("pi_mContactId", Id)).ToListAsync();
+
+        //        mPageData.EmailDetail = await _Context.GetEmailDetail.FromSql(
+
+        //            @"EXEC spmContactEntry @pi_Id, @pi_mContactId",
+
+        //              new SqlParameter("pi_Id", 4)
+
+        //            , new SqlParameter("pi_mContactId", Id)).ToListAsync();
+        //        mPageData.MobileDetail = await _Context.GetMobileDetail.FromSql(
+
+        //            @"EXEC spmContactEntry @pi_Id, @pi_mContactId",
+
+        //              new SqlParameter("pi_Id", 3)
+
+        //            , new SqlParameter("pi_mContactId", Id)).ToListAsync();
+
+        //        return mPageData;
+
+        //    }
+
+        //    catch (Exception Ex)
+
+        //    {
+
+        //        throw Ex;
+
+        //    }
+
+        //}
+
         public async Task<SQLResult> Create(List<ContactDetail> pModel, DatabaseContext _Context,AuditColumns auditColumns)
         {
             SQLResult result = new SQLResult();
@@ -32,29 +99,39 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                 {
                     SQLResult lMobileResult = new SQLResult();
                     MobileConcrete mobileConcrete = new MobileConcrete();
-                    lMobileResult = await mobileConcrete.Create(item.MobileDetail, _Context, auditColumns);
+                   lMobileResult = await mobileConcrete.Create(item.MobileDetail, _Context, auditColumns);
+                    if (lMobileResult.ErrorNo != 0)
+                    {
+                       // _Context.Database.RollbackTransaction();
+                        return lMobileResult;
+                    }
 
                     SQLResult lAddressResult = new SQLResult();
                     AddressConcrete addressConcrete = new AddressConcrete();
                     lAddressResult = await addressConcrete.Create(item.AddressDetail, _Context, auditColumns);
+                    if (lAddressResult.ErrorNo != 0)
+                    {
+                      //  _Context.Database.RollbackTransaction();
+                        return lAddressResult;
+                    }
+
 
                     SQLResult lEmailResult = new SQLResult();
                     EmailConcrete emailConcrete = new EmailConcrete();
                     lEmailResult = await emailConcrete.Create(item.EmailDetail, _Context, auditColumns);
-                    if (lMobileResult.ErrorNo != 0)
-                    {
-                        _Context.Database.RollbackTransaction();
-                        return lMobileResult;
-                    }
-                    if (lAddressResult.ErrorNo != 0)
-                    {
-                        _Context.Database.RollbackTransaction();
-                        return lAddressResult;
-                    }
                     if (lEmailResult.ErrorNo != 0)
                     {
-                        _Context.Database.RollbackTransaction();
+                   //     _Context.Database.RollbackTransaction();
                         return lEmailResult;
+                    }
+
+                    SQLResult lPhoneResult = new SQLResult();
+                    PhoneConcrete phoneConcrete = new PhoneConcrete();
+                    lPhoneResult = await phoneConcrete.Create(item.PhoneDetail, _Context, auditColumns);
+                    if (lPhoneResult.ErrorNo != 0)
+                    {
+                   //     _Context.Database.RollbackTransaction();
+                        return lPhoneResult;
                     }
 
 
@@ -68,6 +145,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                                                 , new SqlMetaData("Designation", SqlDbType.NVarChar, 100)
                                                 , new SqlMetaData("mAddressId", SqlDbType.BigInt)
                                                 , new SqlMetaData("mPhoneId", SqlDbType.BigInt)
+                                                , new SqlMetaData("mMobieId", SqlDbType.BigInt)
                                                 , new SqlMetaData("mEmailId", SqlDbType.BigInt)
                                                 , new SqlMetaData("Default", SqlDbType.Bit)
                                                 , new SqlMetaData("Active", SqlDbType.Bit)
@@ -82,13 +160,15 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetInt64(4, item.TitleId);
                     pRow.SetString(5, item.ContactName);
                     pRow.SetString(6, item.Designation);
-                    pRow.SetInt64(7, item.AddressId);
-                    pRow.SetInt64(8, item.PhoneId);
-                    pRow.SetInt64(9, item.EmailId);
-                    pRow.SetBoolean(10, item.Default);
-                    pRow.SetBoolean(11, item.Active);
-                    pRow.SetBoolean(12, item.Deleted);
-                    pRow.SetInt32(13, item.EntryStatus);
+                    pRow.SetInt64(7, lAddressResult.ID);
+                    pRow.SetInt64(8, lPhoneResult.ID);
+                    //pRow.SetInt64(9, item.MobileId);
+                    pRow.SetInt64(9, lMobileResult.ID);
+                    pRow.SetInt64(10, lEmailResult.ID);
+                    pRow.SetBoolean(11, item.Default);
+                    pRow.SetBoolean(12, item.Active);
+                    pRow.SetBoolean(13, item.Deleted);
+                    pRow.SetInt32(14, (int)item.EntryStatus);
 
                     pRowCollection_typ_mContactDetail.Add(pRow);
                 }
@@ -126,10 +206,11 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
 
         }
 
-        public async Task<SQLResult> Edit(List<ContactDetail> pModel,DatabaseContext _Context,AuditColumns auditColumns,bool Active)
+        public async Task<SQLResult> Edit(List<ContactDetail> pModel,DatabaseContext _Context,
+            AuditColumns auditColumns,bool Active)
         {
             SQLResult result = new SQLResult();
-            _Context.Database.BeginTransaction();
+           // _Context.Database.BeginTransaction();
             try
             {
                 // typ_mContactDetailtable type parameter declartaion with parameter name and table type name
@@ -143,15 +224,19 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                 {
                     SQLResult lMobileResult = new SQLResult();
                     MobileConcrete mobileConcrete = new MobileConcrete();
-                    lMobileResult = await mobileConcrete.Create(item.MobileDetail, _Context, auditColumns);
+                   // lMobileResult = await mobileConcrete.Edit(item.MobileDetail, _Context, auditColumns,Active);
 
                     SQLResult lAddressResult = new SQLResult();
                     AddressConcrete addressConcrete = new AddressConcrete();
-                    lAddressResult = await addressConcrete.Create(item.AddressDetail, _Context, auditColumns);
+                   // lAddressResult = await addressConcrete.Edit(item.AddressDetail, _Context, auditColumns,Active);
 
                     SQLResult lEmailResult = new SQLResult();
                     EmailConcrete emailConcrete = new EmailConcrete();
-                    lEmailResult = await emailConcrete.Create(item.EmailDetail, _Context, auditColumns);
+                    //lEmailResult = await emailConcrete.Edit(item.EmailDetail, _Context, auditColumns,Active);
+
+                    SQLResult lPhoneResult = new SQLResult();
+                    PhoneConcrete phoneConcrete = new PhoneConcrete();
+                    //lPhoneResult = await phoneConcrete.Edit(item.PhoneDetail, _Context, auditColumns, Active);
                     if (lMobileResult.ErrorNo != 0)
                     {
                         _Context.Database.RollbackTransaction();
@@ -166,6 +251,11 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     {
                         _Context.Database.RollbackTransaction();
                         return lEmailResult;
+                    }
+                    if (lPhoneResult.ErrorNo != 0)
+                    {
+                        _Context.Database.RollbackTransaction();
+                        return lPhoneResult;
                     }
 
 
@@ -199,7 +289,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetBoolean(10, item.Default);
                     pRow.SetBoolean(11, item.Active);
                     pRow.SetBoolean(12, item.Deleted);
-                    pRow.SetInt32(13, item.EntryStatus);
+                    pRow.SetInt32(13,(int) item.EntryStatus);
 
                     pRowCollection_typ_mContactDetail.Add(pRow);
                 }

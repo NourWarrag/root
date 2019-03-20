@@ -74,10 +74,13 @@ namespace ConcreteCore
         public DbSet<HRMSEmployeeAdditionalSkill> GetHRMSEmployeeAdditionalSkill { get; set; }
         public DbSet<HRMSEmployeeNationalityDetail> GetHRMSEmployeeNationalityDetail { get; set; }
         public DbSet<HRMSEmployeeCTC> GetHRMSEmployeeCTC { get; set; }
+
+        //public DbSet<ContactEntry> GetContactEntry { get; set; }
         public DbSet<MobileDetail> GetMobileDetail { get; set; }
         public DbSet<EmailDetail> GetEmailDetail { get; set; }
         public DbSet<AddressDetail> GetAddressDetail { get; set; }
         public DbSet<ContactDetail> GetContactDetail { get; set; }
+        public DbSet<PhoneDetail> GetPhoneDetail { get; set; }
 
         //Inventory
         public DbSet<HRMSInventoryIndex> HRMSInventoryIndex { get; set; }

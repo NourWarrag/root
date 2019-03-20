@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using APICore.Library;
+using ConcreteCore.HRMS.Admin.Recruitment;
 using InterfaceCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -19,10 +20,11 @@ namespace APICore.Controllers
     public class HRMSEmployeeController : ControllerBase
     {
         private readonly IHRMSEmployee _repo;
-
+       
         public HRMSEmployeeController(IHRMSEmployee repo)
         {
             _repo = repo;
+        //    _epo = epo;
         }
 
         [HttpGet("{id}")]
@@ -31,6 +33,14 @@ namespace APICore.Controllers
             HRMSEmployeeEntry result = await _repo.GetEntry(id);
             return Ok(result);
         }
+
+        //[HttpGet("contact/{id}")]
+        //public async Task<IActionResult> GetContact(Int64 id)
+        //{
+
+        //    ContactEntry result = await _epo.GetEntry(id);
+        //    return Ok(result);
+        ////}
 
         [HttpPost("getpagedata/{pScreenId}/{pUserId}/{pRecordsPerPage}/{pPageNo}/{pTableId}/{pLastPage}")]
         public async Task<IActionResult> GetPageData(Int64 pScreenId, Int64 pUserId, Int64 pRecordsPerPage,
@@ -120,7 +130,7 @@ namespace APICore.Controllers
             {
                 if (item.Deleted == false)
                 {
-                    if (isUpdateValidation == true && item.EntryStatus == 1)
+                    if (isUpdateValidation == true && (int)item.EntryStatus == 1)
                     {
                         if (item.HRMSEmpExperienceId <= 0)
                         {
@@ -212,7 +222,7 @@ namespace APICore.Controllers
             {
                 if (item.Deleted == false)
                 {
-                    if (isUpdateValidation == true && item.EntryStatus == 1)
+                    if (isUpdateValidation == true && (int)item.EntryStatus == 1)
                     {
                         if (item.HRMSEmpEducationId <= 0)
                         {
@@ -290,7 +300,7 @@ namespace APICore.Controllers
             {
                 if (item.Deleted == false)
                 {
-                    if (isUpdateValidation == true && item.EntryStatus == 1)
+                    if (isUpdateValidation == true && (int)item.EntryStatus == 1)
                     {
                         if (item.HRMSEmpSkillId <= 0)
                         {

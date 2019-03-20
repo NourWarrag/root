@@ -181,13 +181,17 @@ namespace ModelCore.HRMS.Admin.Recruitment
         [Display(Name = "Active")]
         public bool Active { get; set; }
 
-        public List<MobileDetail> MobileDetail { get; set; }
 
-        public List<EmailDetail> EmailDetail { get; set; }
+      //  public List<MobileDetail> MobileDetail { get; set; }
+
+      //  public List<EmailDetail> EmailDetail { get; set; }
 
         public List<ContactDetail> ContactDetail { get; set; }
 
-        public List<AddressDetail> AddressDetail { get; set; }
+      //  public List<AddressDetail> AddressDetail { get; set; }
+
+      //  public List<PhoneDetail> PhoneDetail { get; set; }
+
 
         public List<HRMSEmpEducation> HRMSEmpEducation { get; set; }
 
@@ -265,7 +269,7 @@ namespace ModelCore.HRMS.Admin.Recruitment
 
         [Required]
         [Display(Name = "EntryStatus")]
-        public int EntryStatus { get; set; }
+        public EntryStatus EntryStatus { get; set; }
     }
 
     public class HRMSEmpExperience
@@ -334,7 +338,7 @@ namespace ModelCore.HRMS.Admin.Recruitment
 
         [Required]
         [Display(Name = "EntryStatus")]
-        public int EntryStatus { get; set; }
+        public EntryStatus EntryStatus { get; set; }
     }
 
     public class HRMSEmpSkill
@@ -371,7 +375,7 @@ namespace ModelCore.HRMS.Admin.Recruitment
 
         [Required]
         [Display(Name = "EntryStatus")]
-        public int EntryStatus { get; set; }
+        public EntryStatus EntryStatus { get; set; }
     }
 
     public class HRMSEmployeePersonalDetail
@@ -428,23 +432,11 @@ namespace ModelCore.HRMS.Admin.Recruitment
 
         [Required]
         [Display(Name = "NumberOfFamilyMembers")]
-        public int NumberOfFamilyMembers { get; set; }
-
-        [Required]
-        [Display(Name = "mAddressId")]
-        public Int64 AddressId { get; set; }
+        public Int32 NumberOfFamilyMembers { get; set; }
 
         [Required]
         [Display(Name = "mContactId")]
         public Int64 ContactId { get; set; }
-
-        [Required]
-        [Display(Name = "mMobileId")]
-        public Int64 MobileId { get; set; }
-
-        [Required]
-        [Display(Name = "mEmailId")]
-        public Int64 EmailId { get; set; }
 
         [Required]
         [Display(Name = "Active")]
@@ -456,7 +448,7 @@ namespace ModelCore.HRMS.Admin.Recruitment
 
         [Required]
         [Display(Name = "EntryStatus")]
-        public int EntryStatus { get; set; }
+        public EntryStatus EntryStatus { get; set; }
     }
 
     public class HRMSEmployeeRelatives
@@ -501,7 +493,7 @@ namespace ModelCore.HRMS.Admin.Recruitment
 
         [Required]
         [Display(Name = "EntryStatus")]
-        public int EntryStatus { get; set; }
+        public EntryStatus EntryStatus { get; set; }
     }
 
     public class HRMSEmployeeCTC
@@ -554,7 +546,7 @@ namespace ModelCore.HRMS.Admin.Recruitment
 
         [Required]
         [Display(Name = "EntryStatus")]
-        public int EntryStatus { get; set; }
+        public EntryStatus EntryStatus { get; set; }
     }
 
     public class HRMSEmployeeNationalityDetail
@@ -675,7 +667,7 @@ namespace ModelCore.HRMS.Admin.Recruitment
 
         [Required]
         [Display(Name = "EntryStatus")]
-        public int EntryStatus { get; set; }
+        public EntryStatus EntryStatus { get; set; }
     }
 
     public class HRMSEmployeeAdditionalSkill
@@ -712,9 +704,8 @@ namespace ModelCore.HRMS.Admin.Recruitment
 
         [Required]
         [Display(Name = "EntryStatus")]
-        public int EntryStatus { get; set; }
+        public EntryStatus EntryStatus { get; set; }
     }
-
 
     public class ContactDetail
     {
@@ -724,7 +715,7 @@ namespace ModelCore.HRMS.Admin.Recruitment
         [Display(Name = "mContactDetailId")]
         public Int64 ContactDetailId { get; set; }
 
-        [Required]
+        //[Required]
         [Display(Name = "mContactId")]
         public Int64 ContactId { get; set; }
 
@@ -760,12 +751,25 @@ namespace ModelCore.HRMS.Admin.Recruitment
         public Int64 PhoneId { get; set; }
 
         [Required]
+        [Display(Name = "mPhoneId")]
+        public Int64 MobileId { get; set; }
+
+
+        [Required]
         [Display(Name = "mEmailId")]
         public Int64 EmailId { get; set; }
 
         [Required]
         [Display(Name = "Default")]
         public bool Default { get; set; }
+
+        public List<AddressDetail> AddressDetail { get; set; }
+
+       public List<MobileDetail> MobileDetail { get; set; }
+
+        public List<EmailDetail> EmailDetail { get; set; }
+
+        public List<PhoneDetail> PhoneDetail { get; set; }
 
         [Required]
         [Display(Name = "Deleted")]
@@ -777,13 +781,9 @@ namespace ModelCore.HRMS.Admin.Recruitment
 
         [Required]
         [Display(Name = "EntryStatus")]
-        public int EntryStatus { get; set; }
+        public EntryStatus EntryStatus { get; set; }
 
-        public List<AddressDetail> AddressDetail { get; set; }
 
-        public List<MobileDetail> MobileDetail { get; set; }
-
-        public List<EmailDetail> EmailDetail { get; set; }
     }
 
     public class AddressDetail
@@ -804,6 +804,11 @@ namespace ModelCore.HRMS.Admin.Recruitment
 
         [Display(Name = "mHRMSEmployeeId")]
         public Int64 HRMSEmployeeId { get; set; }
+
+        [Display(Name = "mContactId")]
+        public Int64 ContactDetailId { get; set; }
+
+    
 
         [Required]
         [Display(Name = "mAddressTypeId")]
@@ -843,7 +848,7 @@ namespace ModelCore.HRMS.Admin.Recruitment
 
         [Required]
         [Display(Name = "EntryStatus")]
-        public int EntryStatus { get; set; }
+        public EntryStatus EntryStatus { get; set; }
 
     }
 
@@ -865,6 +870,12 @@ namespace ModelCore.HRMS.Admin.Recruitment
 
         [Display(Name = "mHRMSEmployeeId")]
         public Int64 HRMSEmployeeId { get; set; }
+
+        [Display(Name = "mContactId")]
+        public Int64 ContactDetailId { get; set; }
+
+        //[Display(Name = "mContactId")]
+        //public Int64 ContactId { get; set; }
 
         [Required]
         [Display(Name = "mEmailTypeId")]
@@ -888,7 +899,7 @@ namespace ModelCore.HRMS.Admin.Recruitment
 
         [Required]
         [Display(Name = "EntryStatus")]
-        public int EntryStatus { get; set; }
+        public EntryStatus EntryStatus { get; set; }
     }
 
     public class MobileDetail
@@ -909,6 +920,9 @@ namespace ModelCore.HRMS.Admin.Recruitment
 
         [Display(Name = "mHRMSEmployeeId")]
         public Int64 HRMSEmployeeId { get; set; }
+
+        [Display(Name = "mContactDetailId")]
+        public Int64 ContactDetailId { get; set; }
 
         [Required]
         [Display(Name = "mMobileTypeId")]
@@ -936,7 +950,67 @@ namespace ModelCore.HRMS.Admin.Recruitment
 
         [Required]
         [Display(Name = "EntryStatus")]
-        public int EntryStatus { get; set; }
+        public EntryStatus EntryStatus { get; set; }
     }
+
+    public class PhoneDetail
+    {
+        [Key]
+
+        [Required]
+        [Display(Name = "mPhoneDetailId")]
+        public Int64 PhoneDetailId { get; set; }
+
+
+        [Display(Name = "mHRMSEmployeeId")]
+        public Int64 HRMSEmployeeId { get; set; }
+
+        [Display(Name = "mContactId")]
+        public Int64 ContactDetailId { get; set; }
+
+        [Required]
+        [Display(Name = "mPhoneId")]
+        public Int64 PhoneId { get; set; }
+
+        //[Display(Name = "mContactId")]
+        //public Int64 ContactId { get; set; }
+
+        [Required]
+        [Display(Name = "SrNo")]
+        public int SrNo { get; set; }
+
+        [Required]
+        [Display(Name = "mPhoneTypeId")]
+        public Int64 PhoneTypeId { get; set; }
+
+        [Required]
+        [Display(Name = "PhonePrefixCode")]
+        public decimal PhonePrefixCode { get; set; }
+
+        [Required]
+        [Display(Name = "PhoneNo")]
+        public decimal PhoneNo { get; set; }
+
+        [Required]
+        [Display(Name = "Extension")]
+        public decimal Extension { get; set; }
+
+        [Required]
+        [Display(Name = "Default")]
+        public bool Default { get; set; }
+
+        [Required]
+        [Display(Name = "Active")]
+        public bool Active { get; set; }
+
+        [Required]
+        [Display(Name = "Deleted")]
+        public bool Deleted { get; set; }
+
+        [Required]
+        [Display(Name = "EntryStatus")]
+        public EntryStatus EntryStatus { get; set; }
+    }
+
 
 }

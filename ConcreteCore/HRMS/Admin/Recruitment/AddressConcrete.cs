@@ -59,7 +59,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetBoolean(9, item.DefaultFlag);
                     pRow.SetBoolean(10, item.Active);
                     pRow.SetBoolean(11, item.Deleted);
-                    pRow.SetInt32(12, item.EntryStatus);
+                    pRow.SetInt32(12, (int)item.EntryStatus);
 
                     pRowCollection_typ_mAddressDetail.Add(pRow);
                 }
@@ -141,7 +141,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetBoolean(9, item.DefaultFlag);
                     pRow.SetBoolean(10, item.Active);
                     pRow.SetBoolean(11, item.Deleted);
-                    pRow.SetInt32(12, item.EntryStatus);
+                    pRow.SetInt32(12, (int)item.EntryStatus);
 
                     pRowCollection_typ_mAddressDetail.Add(pRow);
                 }

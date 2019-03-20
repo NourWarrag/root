@@ -17,7 +17,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
         public async Task<SQLResult> Create(List<EmailDetail> pModel, DatabaseContext _Context,AuditColumns auditColumns)
         {
             SQLResult result = new SQLResult();
-            _Context.Database.BeginTransaction();
+         
             try
             {
                 // typ_mEmailDetailtable type parameter declartaion with parameter name and table type name
@@ -50,7 +50,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetBoolean(5, item.Default);
                     pRow.SetBoolean(6, item.Active);
                     pRow.SetBoolean(7, item.Deleted);
-                    pRow.SetInt32(8, item.EntryStatus);
+                    pRow.SetInt32(8, (int)item.EntryStatus);
 
                     pRowCollection_typ_mEmailDetail.Add(pRow);
                 }
@@ -92,7 +92,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
         public async Task<SQLResult> Edit(List<EmailDetail> pModel,DatabaseContext _Context,AuditColumns auditColumns,bool Active)
         {
             SQLResult result = new SQLResult();
-            _Context.Database.BeginTransaction();
+           
             try
             {
                 // typ_mEmailDetailtable type parameter declartaion with parameter name and table type name
@@ -125,7 +125,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetBoolean(5, item.Default);
                     pRow.SetBoolean(6, item.Active);
                     pRow.SetBoolean(7, item.Deleted);
-                    pRow.SetInt32(8, item.EntryStatus);
+                    pRow.SetInt32(8, (int)item.EntryStatus);
 
                     pRowCollection_typ_mEmailDetail.Add(pRow);
                 }

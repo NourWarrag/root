@@ -49,7 +49,9 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                 throw ex;
             }
         }
-
+/*********************************************************************/
+/*        //example: http://localhost:5000/api/HRMSEmployee/40        */
+/**********************************************************************/
 
         public async Task<HRMSEmployeeEntry> GetEntry(Int64 Id)
 
@@ -133,37 +135,51 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
 
                    , new SqlParameter("pi_HRMSEmployeeId", Id)).ToListAsync();
 
-                mPageData.MobileDetail = await _Context.GetMobileDetail.FromSql(
+                mPageData.ContactDetail = await _Context.GetContactDetail.FromSql(
+
+               @"EXEC spmHRMSEmployeeEntry @pi_Id, @pi_HRMSEmployeeId",
+
+                 new SqlParameter("pi_Id", 10)
+
+               , new SqlParameter("pi_HRMSEmployeeId", Id)).ToListAsync();
+
+
+
+                mPageData.ContactDetail[0].MobileDetail = await _Context.GetMobileDetail.FromSql(
 
                    @"EXEC spmHRMSEmployeeEntry @pi_Id, @pi_HRMSEmployeeId",
 
-                     new SqlParameter("pi_Id", 10)
+                     new SqlParameter("pi_Id", 11)
 
                    , new SqlParameter("pi_HRMSEmployeeId", Id)).ToListAsync();
 
-                mPageData.EmailDetail = await _Context.GetEmailDetail.FromSql(
+                mPageData.ContactDetail[0].EmailDetail = await _Context.GetEmailDetail.FromSql(
 
                   @"EXEC spmHRMSEmployeeEntry @pi_Id, @pi_HRMSEmployeeId",
 
-                    new SqlParameter("pi_Id", 11)
+                    new SqlParameter("pi_Id", 12)
 
                   , new SqlParameter("pi_HRMSEmployeeId", Id)).ToListAsync();
 
-                mPageData.AddressDetail = await _Context.GetAddressDetail.FromSql(
+                mPageData.ContactDetail[0].AddressDetail = await _Context.GetAddressDetail.FromSql(
 
                  @"EXEC spmHRMSEmployeeEntry @pi_Id, @pi_HRMSEmployeeId",
 
-                   new SqlParameter("pi_Id", 12)
+                   new SqlParameter("pi_Id", 13)
 
                  , new SqlParameter("pi_HRMSEmployeeId", Id)).ToListAsync();
 
-                mPageData.ContactDetail = await _Context.GetContactDetail.FromSql(
+               
+                mPageData.ContactDetail[0].PhoneDetail = await _Context.GetPhoneDetail.FromSql(
 
-              @"EXEC spmHRMSEmployeeEntry @pi_Id, @pi_HRMSEmployeeId",
+                @"EXEC spmHRMSEmployeeEntry @pi_Id, @pi_HRMSEmployeeId",
 
-                new SqlParameter("pi_Id", 13)
+                  new SqlParameter("pi_Id", 14)
 
-              , new SqlParameter("pi_HRMSEmployeeId", Id)).ToListAsync();
+                , new SqlParameter("pi_HRMSEmployeeId", Id)).ToListAsync();
+
+
+
 
                 return mPageData;
 
@@ -179,6 +195,265 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
 
         }
 
+
+        /*********************************************************************/
+        /*        //Json example for Create:
+         *            {
+                	"auditColumns": 
+                			{
+                			"userId":1,
+                			"hostname":"test",
+                			"ipaddress":"test",
+                			"devicetype":"test",
+                			"macaddress":"test",
+                			"companyId":10001
+                			},
+      "hrmsEmployeeId": 0,
+    "employeeCode": "8787",
+    "companyId": 10001,
+    "branchId": 201,
+    "departmentId": 201,
+    "designationId": 2,
+    "managerId": 2,
+    "supervisorId": 2,
+    "subordinateId": 2,
+    "doj": "2017-01-01T00:00:00",
+    "employeeType": 1,
+    "employeeTreatedAs": 1,
+    "fingerprintId": 1,
+    "hrmscvRepositoryId": 2,
+    "hrmsctcId": 2,
+    "bankAccountDetailId": 2,
+    "effectiveFrom": "2017-01-01T00:00:00",
+    "effectiveTo": "2017-01-01T00:00:00",
+    "versionNo": 1,
+    "myParentId": 1,
+    "active": true,
+    "contactDetail": [
+        {
+            "contactDetailId": 0,
+            "contactId": 2,
+            "srNo": 1,
+            "hrmsEmployeeId": 0,
+            "contactTypeId": 1,
+            "titleId": 1,
+            "contactName": "1",
+            "designation": "1",
+            "addressId": 0,
+            "phoneId": 0,
+            "mobileId": 0,
+            "emailId": 0,
+            "default": true,
+            "addressDetail": [
+                {
+                    "addressDetailId": 0,
+                    "addressId": 0,
+                    "mobileId": 0,
+                    "srNo": 1,
+                    "hrmsEmployeeId": 0,
+                    "contactDetailId": 0,
+                    "addressTypeId": 1,
+                    "address": "1sqd",
+                    "countryId": 12001,
+                    "stateId": 120001,
+                    "cityId": 1200001,
+                    "pinCode": "1",
+                    "defaultFlag": true,
+                    "deleted": false,
+                    "active": true,
+                    "entryStatus": 0
+                }
+            ],
+            "mobileDetail": [
+                {
+                    "mobileDetailId": 0,
+                    "mobileId": 0,
+                    "srNo": 1,
+                    "hrmsEmployeeId": 0,
+                    "contactDetailId": 0,
+                    "mobileTypeId": 50100002,
+                    "countryCode": 10001,
+                    "mobileNo": 1234565,
+                    "defaultFlag": true,
+                    "active": true,
+                    "deleted": false,
+                    "entryStatus": 0
+                }
+            ],
+            "emailDetail": [
+                {
+                    "emailDetailId": 0,
+                    "emailId": 0,
+                    "srNo": 1,
+                    "hrmsEmployeeId": 0,
+                    "contactDetailId": 0,
+                    "emailTypeId": 1,
+                    "email": "132edfw",
+                    "default": true,
+                    "deleted": false,
+                    "active": true,
+                    "entryStatus": 0
+                }
+            ],
+            "phoneDetail": [
+                {
+                    "phoneDetailId": 0,
+                    "hrmsEmployeeId": 0,
+                    "contactDetailId": 0,
+                    "phoneId": 0,
+                    "srNo": 1,
+                    "phoneTypeId": 1,
+                    "phonePrefixCode": 1,
+                    "phoneNo": 1,
+                    "extension": 1,
+                    "default": true,
+                    "active": true,
+                    "deleted": false,
+                    "entryStatus": 0
+                }
+            ],
+            "deleted": false,
+            "active": true,
+            "entryStatus": 0
+        }
+    ],
+    "hrmsEmpEducation": [
+        {
+            "hrmsEmpEducationId": 0,
+            "srNo": 5,
+            "hrmsEmployeeId": 0,
+            "certDegreeName": "a",
+            "major": "a",
+            "uniInstituteName": "a",
+            "startMonth": 1,
+            "startYear": 1,
+            "completionMonth": 1,
+            "completionYear": 1,
+            "grade": "1",
+            "deleted": false,
+            "entryStatus": 0
+        }
+    ],
+    "hrmsEmpExperience": [
+        {
+            "hrmsEmpExperienceId": 0,
+            "srNo": 4,
+            "hrmsEmployeeId": 0,
+            "companyName": "j",
+            "designation": "j",
+            "joinMonth": 2,
+            "joinYear": 2,
+            "leaveMonth": 2,
+            "leaveYear": 2,
+            "monthlySalary": 12,
+            "countryId": 12001,
+            "stateId": 120001,
+            "cityId": 1200001,
+            "description": "12",
+            "deleted": false,
+            "entryStatus": 0
+        }
+    ],
+    "hrmsEmpSkill": [
+        {
+            "hrmsEmpSkillId": 0,
+            "srNo": 5,
+            "hrmsEmployeeId": 0,
+            "hrmsSkillSetId": 2,
+            "skillLevel": 1,
+            "active": true,
+            "deleted": false,
+            "entryStatus": 0
+        }
+    ],
+    "hrmsEmployeePersonalDetail": [
+        {
+            "hrmsEmployeePersonalDetailId": 0,
+            "srNo": 3,
+            "hrmsEmployeeId": 0,
+            "companyId": 10001,
+            "branchId": 201,
+            "employeeName": "Mohammed",
+            "fatherName": "d",
+            "grandfatherName": "da",
+            "familyName": "ad",
+            "dob": "1999-01-01T00:00:00",
+            "gender": 1,
+            "maritalStatus": 1,
+            "numberOfFamilyMembers": 1,
+            "contactId": 2,
+            "active": true,
+            "deleted": false,
+            "entryStatus": 0
+        }
+    ],
+    "hrmsEmployeeRelatives": [
+        {
+            "hrmsEmployeeRelativesId": 0,
+            "srNo": 3,
+            "hrmsEmployeeId": 0,
+            "relativeName": "3",
+            "relation": "1",
+            "workingInCompany": true,
+            "relativeEmployeeId": 12,
+            "active": true,
+            "deleted": false,
+            "entryStatus": 0
+        }
+    ],
+    "hrmsEmployeeCTC": [
+        {
+            "hrmsEmployeeCTCId": 0,
+            "srNo": 2,
+            "hrmsEmployeeId": 0,
+            "companyId": 10001,
+            "branchId": 201,
+            "hrmsAllowanceId": 115,
+            "allowanceValue": 1,
+            "effectiveFrom": "1999-01-01T00:00:00",
+            "effectiveTo": "1999-01-01T00:00:00",
+            "active": true,
+            "deleted": false,
+            "entryStatus": 0
+        }
+    ],
+    "hrmsEmployeeNationalityDetail": [
+        {
+            "hrmsEmployeeNationalityDetailId": 0,
+            "srNo": 2,
+            "hrmsEmployeeId": 0,
+            "nationality": 1,
+            "alternateNationality": 1,
+            "idNumber": "1",
+            "idIssuePlace": "1",
+            "idIssueDate": "1999-01-01T00:00:00",
+            "idExpiryDate": "1999-01-01T00:00:00",
+            "alternativeIDNumber": "1",
+            "alternativeIDIssuePlace": "1",
+            "alternativeIDIssueDate": "1999-01-01T00:00:00",
+            "alternativeIDExpiryDate": "1999-01-01T00:00:00",
+            "passportNumber": "1",
+            "passportIssuePlace": "1",
+            "passportIssueDate": "1999-01-01T00:00:00",
+            "passportExpiryDate": "1999-01-01T00:00:00",
+            "visaType": 1,
+            "visaNumber": "1",
+            "visaIssuePlace": "1",
+            "visaIssueDate": "1999-01-01T00:00:00",
+            "visaExpiryDate": "1999-01-01T00:00:00",
+            "expatWorkPermitType": 1,
+            "expatWorkPermitIssuePlace": "1",
+            "expatWorkPermitIssueDate": "1999-01-01T00:00:00",
+            "expatWorkPermitExpiryDate": "1999-01-01T00:00:00",
+            "active": true,
+            "deleted": false,
+            "entryStatus": 0
+        }
+    ],
+    "hrmsEmployeeAdditionalSkill": []
+}*/
+        /**********************************************************************/
+
         public async Task<SQLResult> Create(HRMSEmployeeEntry pModel)
         {
             SQLResult result = new SQLResult();
@@ -186,37 +461,37 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
             try
             {
 
-                SQLResult lMobileResult = new SQLResult();
-                MobileConcrete mobileConcrete = new MobileConcrete();
-                lMobileResult = await mobileConcrete.Create(pModel.MobileDetail, _Context,pModel.AuditColumns);
+                //SQLResult lMobileResult = new SQLResult();
+                //MobileConcrete mobileConcrete = new MobileConcrete();
+                //lMobileResult = await mobileConcrete.Create(pModel.MobileDetail, _Context,pModel.AuditColumns);
 
-                SQLResult lAddressResult = new SQLResult();
-                AddressConcrete addressConcrete = new AddressConcrete();
-                lAddressResult = await addressConcrete.Create(pModel.AddressDetail, _Context, pModel.AuditColumns);
+                //SQLResult lAddressResult = new SQLResult();
+                //AddressConcrete addressConcrete = new AddressConcrete();
+                //lAddressResult = await addressConcrete.Create(pModel.AddressDetail, _Context, pModel.AuditColumns);
 
-                SQLResult lEmailResult = new SQLResult();
-                EmailConcrete emailConcrete = new EmailConcrete();
-                lEmailResult = await emailConcrete.Create(pModel.EmailDetail, _Context, pModel.AuditColumns);
+                //SQLResult lEmailResult = new SQLResult();
+                //EmailConcrete emailConcrete = new EmailConcrete();
+                //lEmailResult = await emailConcrete.Create(pModel.EmailDetail, _Context, pModel.AuditColumns);
 
                 SQLResult lContactResult = new SQLResult();
                 ContactConcrete contactConcrete = new ContactConcrete();
                 lContactResult = await contactConcrete.Create(pModel.ContactDetail, _Context, pModel.AuditColumns);
 
-                if (lMobileResult.ErrorNo != 0)
-                {
-                    _Context.Database.RollbackTransaction();
-                    return lMobileResult;
-                }
-                if (lAddressResult.ErrorNo != 0)
-                {
-                    _Context.Database.RollbackTransaction();
-                    return lAddressResult;
-                }
-                if (lEmailResult.ErrorNo != 0)
-                {
-                    _Context.Database.RollbackTransaction();
-                    return lEmailResult;
-                }
+                //if (lMobileResult.ErrorNo != 0)
+                //{
+                //    _Context.Database.RollbackTransaction();
+                //    return lMobileResult;
+                //}
+                //if (lAddressResult.ErrorNo != 0)
+                //{
+                //    _Context.Database.RollbackTransaction();
+                //    return lAddressResult;
+                //}
+                //if (lEmailResult.ErrorNo != 0)
+                //{
+                //    _Context.Database.RollbackTransaction();
+                //    return lEmailResult;
+                //}
                 if (lContactResult.ErrorNo != 0)
                 {
                     _Context.Database.RollbackTransaction();
@@ -260,7 +535,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetInt32(9, item.CompletionYear);
                     pRow.SetString(10, item.Grade);
                     pRow.SetBoolean(11, item.Deleted);
-                    pRow.SetInt32(12, item.EntryStatus);
+                    pRow.SetInt32(12, (int)item.EntryStatus);
 
                     pRowCollection_typ_mHRMSEmpEducation.Add(pRow);
                 }
@@ -317,7 +592,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetInt64(12, item.CityId);
                     pRow.SetString(13, item.Description);
                     pRow.SetBoolean(14, item.Deleted);
-                    pRow.SetInt32(15, item.EntryStatus);
+                    pRow.SetInt32(15, (int)item.EntryStatus);
 
                     pRowCollection_typ_mHRMSEmpExperience.Add(pRow);
                 }
@@ -361,7 +636,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetInt64(4, item.SkillLevel);
                     pRow.SetBoolean(5, item.Active);
                     pRow.SetBoolean(6, item.Deleted);
-                    pRow.SetInt32(7, item.EntryStatus);
+                    pRow.SetInt32(7, (int)item.EntryStatus);
 
                     pRowCollection_typ_mHRMSEmpSkill.Add(pRow);
                 }
@@ -401,7 +676,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetInt64(4, item.SkillLevel);
                     pRow.SetBoolean(5, item.Active);
                     pRow.SetBoolean(6, item.Deleted);
-                    pRow.SetInt32(7, item.EntryStatus);
+                    pRow.SetInt32(7, (int)item.EntryStatus);
 
                     pRowCollection_typ_mHRMSEmployeeAdditionalSkill.Add(pRow);
                 }
@@ -438,10 +713,9 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                                                 , new SqlMetaData("Gender", SqlDbType.BigInt)
                                                 , new SqlMetaData("MaritalStatus", SqlDbType.BigInt)
                                                 , new SqlMetaData("NumberOfFamilyMembers", SqlDbType.Int)
-                                                , new SqlMetaData("mAddressId", SqlDbType.BigInt)
+                                               
                                                 , new SqlMetaData("mContactId", SqlDbType.BigInt)
-                                                , new SqlMetaData("mMobileId", SqlDbType.BigInt)
-                                                , new SqlMetaData("mEmailId", SqlDbType.BigInt)
+                                               
                                                 , new SqlMetaData("Active", SqlDbType.Bit)
                                                 , new SqlMetaData("Deleted", SqlDbType.Bit)
                                                 , new SqlMetaData("EntryStatus", SqlDbType.Int)
@@ -459,14 +733,11 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetDateTime(9, item.DOB);
                     pRow.SetInt64(10, item.Gender);
                     pRow.SetInt64(11, item.MaritalStatus);
-                    pRow.SetInt32(12, item.NumberOfFamilyMembers);
-                    pRow.SetInt64(13, item.AddressId);
-                    pRow.SetInt64(14, item.ContactId);
-                    pRow.SetInt64(15, lMobileResult.ID);
-                    pRow.SetInt64(16, item.EmailId);
-                    pRow.SetBoolean(17, item.Active);
-                    pRow.SetBoolean(18, item.Deleted);
-                    pRow.SetInt32(19, item.EntryStatus);
+                    pRow.SetInt32(12, item.NumberOfFamilyMembers);    
+                    pRow.SetInt64(13, item.ContactId);
+                    pRow.SetBoolean(14, item.Active);
+                    pRow.SetBoolean(15, item.Deleted);
+                    pRow.SetInt32(16, (int)item.EntryStatus);
 
                     pRowCollection_typ_mHRMSEmployeePersonalDetail.Add(pRow);
                 }
@@ -550,7 +821,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetDateTime(25, item.ExpatWorkPermitExpiryDate);
                     pRow.SetBoolean(26, item.Active);
                     pRow.SetBoolean(27, item.Deleted);
-                    pRow.SetInt32(28, item.EntryStatus);
+                    pRow.SetInt32(28, (int)item.EntryStatus);
 
                     pRowCollection_typ_mHRMSEmployeeNationalityDetail.Add(pRow);
                 }
@@ -594,7 +865,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetInt64(6, item.RelativeEmployeeId);
                     pRow.SetBoolean(7, item.Active);
                     pRow.SetBoolean(8, item.Deleted);
-                    pRow.SetInt32(9, item.EntryStatus);
+                    pRow.SetInt32(9, (int)item.EntryStatus);
 
                     pRowCollection_typ_mHRMSEmployeeRelatives.Add(pRow);
                 }
@@ -643,7 +914,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetDateTime(8, item.EffectiveTo);
                     pRow.SetBoolean(9, item.Active);
                     pRow.SetBoolean(10, item.Deleted);
-                    pRow.SetInt32(11, item.EntryStatus);
+                    pRow.SetInt32(11, (int)item.EntryStatus);
 
                     pRowCollection_typ_HRMSEmployeeCTC.Add(pRow);
                 }
@@ -755,42 +1026,42 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
             try
             {
 
-                SQLResult lMobileResult = new SQLResult();
-                MobileConcrete mobileConcrete = new MobileConcrete();
-                lMobileResult = await mobileConcrete.Edit(pModel.MobileDetail, _Context, pModel.AuditColumns,true);
+                //SQLResult lMobileResult = new SQLResult();
+                //MobileConcrete mobileConcrete = new MobileConcrete();
+                //lMobileResult = await mobileConcrete.Edit(pModel.MobileDetail, _Context, pModel.AuditColumns,true);
 
-                SQLResult lAddressResult = new SQLResult();
-                AddressConcrete addressConcrete = new AddressConcrete();
-                lAddressResult = await addressConcrete.Edit(pModel.AddressDetail, _Context, pModel.AuditColumns, true);
+                //SQLResult lAddressResult = new SQLResult();
+                //AddressConcrete addressConcrete = new AddressConcrete();
+                //lAddressResult = await addressConcrete.Edit(pModel.AddressDetail, _Context, pModel.AuditColumns, true);
 
-                SQLResult lEmailResult = new SQLResult();
-                EmailConcrete emailConcrete = new EmailConcrete();
-                lEmailResult = await emailConcrete.Edit(pModel.EmailDetail, _Context, pModel.AuditColumns, true);
+                //SQLResult lEmailResult = new SQLResult();
+                //EmailConcrete emailConcrete = new EmailConcrete();
+                //lEmailResult = await emailConcrete.Edit(pModel.EmailDetail, _Context, pModel.AuditColumns, true);
 
                 SQLResult lContactResult = new SQLResult();
-                ContactConcrete contactConcrete = new ContactConcrete();
-                lContactResult = await contactConcrete.Create(pModel.ContactDetail, _Context, pModel.AuditColumns);
+                //ContactConcrete contactConcrete = new ContactConcrete();
+                //lContactResult = await contactConcrete.Create(pModel.ContactDetail, _Context, pModel.AuditColumns);
 
-                if (lMobileResult.ErrorNo != 0)
-                {
-                    _Context.Database.RollbackTransaction();
-                    return lMobileResult;
-                }
-                if (lAddressResult.ErrorNo != 0)
-                {
-                    _Context.Database.RollbackTransaction();
-                    return lAddressResult;
-                }
-                if (lEmailResult.ErrorNo != 0)
-                {
-                    _Context.Database.RollbackTransaction();
-                    return lEmailResult;
-                }
-                if (lContactResult.ErrorNo != 0)
-                {
-                    _Context.Database.RollbackTransaction();
-                    return lContactResult;
-                }
+                //if (lMobileResult.ErrorNo != 0)
+                //{
+                //    _Context.Database.RollbackTransaction();
+                //    return lMobileResult;
+                //}
+                //if (lAddressResult.ErrorNo != 0)
+                //{
+                //    _Context.Database.RollbackTransaction();
+                //    return lAddressResult;
+                //}
+                //if (lEmailResult.ErrorNo != 0)
+                //{
+                //    _Context.Database.RollbackTransaction();
+                //    return lEmailResult;
+                ////}
+                //if (lContactResult.ErrorNo != 0)
+                //{
+                //    _Context.Database.RollbackTransaction();
+                //    return lContactResult;
+                //}
                 // typ_mHRMSEmpEducationtable type parameter declartaion with parameter name and table type name
                 SqlParameter ptyp_mHRMSEmpEducationParameter = new SqlParameter("@pi_typ_mHRMSEmpEducation", SqlDbType.Structured)
                 {
@@ -829,7 +1100,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetInt32(9, item.CompletionYear);
                     pRow.SetString(10, item.Grade);
                     pRow.SetBoolean(11, item.Deleted);
-                    pRow.SetInt32(12, item.EntryStatus);
+                    pRow.SetInt32(12, (int)item.EntryStatus);
 
                     pRowCollection_typ_mHRMSEmpEducation.Add(pRow);
                 }
@@ -886,7 +1157,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetInt64(12, item.CityId);
                     pRow.SetString(13, item.Description);
                     pRow.SetBoolean(14, item.Deleted);
-                    pRow.SetInt32(15, item.EntryStatus);
+                    pRow.SetInt32(15, (int)item.EntryStatus);
 
                     pRowCollection_typ_mHRMSEmpExperience.Add(pRow);
                 }
@@ -930,7 +1201,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetInt64(4, item.SkillLevel);
                     pRow.SetBoolean(5, item.Active);
                     pRow.SetBoolean(6, item.Deleted);
-                    pRow.SetInt32(7, item.EntryStatus);
+                    pRow.SetInt32(7, (int)item.EntryStatus);
 
                     pRowCollection_typ_mHRMSEmpSkill.Add(pRow);
                 }
@@ -970,7 +1241,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetInt64(4, item.SkillLevel);
                     pRow.SetBoolean(5, item.Active);
                     pRow.SetBoolean(6, item.Deleted);
-                    pRow.SetInt32(7, item.EntryStatus);
+                    pRow.SetInt32(7, (int)item.EntryStatus);
 
                     pRowCollection_typ_mHRMSEmployeeAdditionalSkill.Add(pRow);
                 }
@@ -1007,10 +1278,9 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                                                 , new SqlMetaData("Gender", SqlDbType.BigInt)
                                                 , new SqlMetaData("MaritalStatus", SqlDbType.BigInt)
                                                 , new SqlMetaData("NumberOfFamilyMembers", SqlDbType.Int)
-                                                , new SqlMetaData("mAddressId", SqlDbType.BigInt)
+                                            
                                                 , new SqlMetaData("mContactId", SqlDbType.BigInt)
-                                                , new SqlMetaData("mMobileId", SqlDbType.BigInt)
-                                                , new SqlMetaData("mEmailId", SqlDbType.BigInt)
+                                              
                                                 , new SqlMetaData("Active", SqlDbType.Bit)
                                                 , new SqlMetaData("Deleted", SqlDbType.Bit)
                                                 , new SqlMetaData("EntryStatus", SqlDbType.Int)
@@ -1029,13 +1299,10 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetInt64(10, item.Gender);
                     pRow.SetInt64(11, item.MaritalStatus);
                     pRow.SetInt32(12, item.NumberOfFamilyMembers);
-                    pRow.SetInt64(13, item.AddressId);
-                    pRow.SetInt64(14, item.ContactId);
-                    pRow.SetInt64(15, lMobileResult.ID);
-                    pRow.SetInt64(16, item.EmailId);
-                    pRow.SetBoolean(17, item.Active);
-                    pRow.SetBoolean(18, item.Deleted);
-                    pRow.SetInt32(19, item.EntryStatus);
+                    pRow.SetInt64(13, item.ContactId);
+                    pRow.SetBoolean(14, item.Active);
+                    pRow.SetBoolean(15, item.Deleted);
+                    pRow.SetInt32(16, (int)item.EntryStatus);
 
                     pRowCollection_typ_mHRMSEmployeePersonalDetail.Add(pRow);
                 }
@@ -1120,7 +1387,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetDateTime(25, item.ExpatWorkPermitExpiryDate);
                     pRow.SetBoolean(26, item.Active);
                     pRow.SetBoolean(27, item.Deleted);
-                    pRow.SetInt32(28, item.EntryStatus);
+                    pRow.SetInt32(28, (int)item.EntryStatus);
 
                     pRowCollection_typ_mHRMSEmployeeNationalityDetail.Add(pRow);
                 }
@@ -1164,7 +1431,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetInt64(6, item.RelativeEmployeeId);
                     pRow.SetBoolean(7, item.Active);
                     pRow.SetBoolean(8, item.Deleted);
-                    pRow.SetInt32(9, item.EntryStatus);
+                    pRow.SetInt32(9, (int)item.EntryStatus);
 
                     pRowCollection_typ_mHRMSEmployeeRelatives.Add(pRow);
                 }
@@ -1213,7 +1480,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetDateTime(8, item.EffectiveTo);
                     pRow.SetBoolean(9, item.Active);
                     pRow.SetBoolean(10, item.Deleted);
-                    pRow.SetInt32(11, item.EntryStatus);
+                    pRow.SetInt32(11, (int)item.EntryStatus);
 
                     pRowCollection_typ_HRMSEmployeeCTC.Add(pRow);
                 }

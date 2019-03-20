@@ -72,6 +72,10 @@ namespace APICore
             services.AddTransient<IHRMSEmployee, HRMSEmployeeConcrete>();
             services.AddTransient<IHRMSInventory, HRMSInventoryConcrete>();
             services.AddTransient<IHRMSAllowance, HRMSAllowanceConcrete>();
+           // services.AddTransient<IContact, ContactConcrete>();
+
+
+
 
 
 
