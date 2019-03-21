@@ -49,9 +49,6 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                 throw ex;
             }
         }
-/*********************************************************************/
-/*        //example: http://localhost:5000/api/HRMSEmployee/40        */
-/**********************************************************************/
 
         public async Task<HRMSEmployeeEntry> GetEntry(Int64 Id)
 
@@ -196,264 +193,6 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
         }
 
 
-        /*********************************************************************/
-        /*        //Json example for Create:
-         *            {
-                	"auditColumns": 
-                			{
-                			"userId":1,
-                			"hostname":"test",
-                			"ipaddress":"test",
-                			"devicetype":"test",
-                			"macaddress":"test",
-                			"companyId":10001
-                			},
-      "hrmsEmployeeId": 0,
-    "employeeCode": "8787",
-    "companyId": 10001,
-    "branchId": 201,
-    "departmentId": 201,
-    "designationId": 2,
-    "managerId": 2,
-    "supervisorId": 2,
-    "subordinateId": 2,
-    "doj": "2017-01-01T00:00:00",
-    "employeeType": 1,
-    "employeeTreatedAs": 1,
-    "fingerprintId": 1,
-    "hrmscvRepositoryId": 2,
-    "hrmsctcId": 2,
-    "bankAccountDetailId": 2,
-    "effectiveFrom": "2017-01-01T00:00:00",
-    "effectiveTo": "2017-01-01T00:00:00",
-    "versionNo": 1,
-    "myParentId": 1,
-    "active": true,
-    "contactDetail": [
-        {
-            "contactDetailId": 0,
-            "contactId": 2,
-            "srNo": 1,
-            "hrmsEmployeeId": 0,
-            "contactTypeId": 1,
-            "titleId": 1,
-            "contactName": "1",
-            "designation": "1",
-            "addressId": 0,
-            "phoneId": 0,
-            "mobileId": 0,
-            "emailId": 0,
-            "default": true,
-            "addressDetail": [
-                {
-                    "addressDetailId": 0,
-                    "addressId": 0,
-                    "mobileId": 0,
-                    "srNo": 1,
-                    "hrmsEmployeeId": 0,
-                    "contactDetailId": 0,
-                    "addressTypeId": 1,
-                    "address": "1sqd",
-                    "countryId": 12001,
-                    "stateId": 120001,
-                    "cityId": 1200001,
-                    "pinCode": "1",
-                    "defaultFlag": true,
-                    "deleted": false,
-                    "active": true,
-                    "entryStatus": 0
-                }
-            ],
-            "mobileDetail": [
-                {
-                    "mobileDetailId": 0,
-                    "mobileId": 0,
-                    "srNo": 1,
-                    "hrmsEmployeeId": 0,
-                    "contactDetailId": 0,
-                    "mobileTypeId": 50100002,
-                    "countryCode": 10001,
-                    "mobileNo": 1234565,
-                    "defaultFlag": true,
-                    "active": true,
-                    "deleted": false,
-                    "entryStatus": 0
-                }
-            ],
-            "emailDetail": [
-                {
-                    "emailDetailId": 0,
-                    "emailId": 0,
-                    "srNo": 1,
-                    "hrmsEmployeeId": 0,
-                    "contactDetailId": 0,
-                    "emailTypeId": 1,
-                    "email": "132edfw",
-                    "default": true,
-                    "deleted": false,
-                    "active": true,
-                    "entryStatus": 0
-                }
-            ],
-            "phoneDetail": [
-                {
-                    "phoneDetailId": 0,
-                    "hrmsEmployeeId": 0,
-                    "contactDetailId": 0,
-                    "phoneId": 0,
-                    "srNo": 1,
-                    "phoneTypeId": 1,
-                    "phonePrefixCode": 1,
-                    "phoneNo": 1,
-                    "extension": 1,
-                    "default": true,
-                    "active": true,
-                    "deleted": false,
-                    "entryStatus": 0
-                }
-            ],
-            "deleted": false,
-            "active": true,
-            "entryStatus": 0
-        }
-    ],
-    "hrmsEmpEducation": [
-        {
-            "hrmsEmpEducationId": 0,
-            "srNo": 5,
-            "hrmsEmployeeId": 0,
-            "certDegreeName": "a",
-            "major": "a",
-            "uniInstituteName": "a",
-            "startMonth": 1,
-            "startYear": 1,
-            "completionMonth": 1,
-            "completionYear": 1,
-            "grade": "1",
-            "deleted": false,
-            "entryStatus": 0
-        }
-    ],
-    "hrmsEmpExperience": [
-        {
-            "hrmsEmpExperienceId": 0,
-            "srNo": 4,
-            "hrmsEmployeeId": 0,
-            "companyName": "j",
-            "designation": "j",
-            "joinMonth": 2,
-            "joinYear": 2,
-            "leaveMonth": 2,
-            "leaveYear": 2,
-            "monthlySalary": 12,
-            "countryId": 12001,
-            "stateId": 120001,
-            "cityId": 1200001,
-            "description": "12",
-            "deleted": false,
-            "entryStatus": 0
-        }
-    ],
-    "hrmsEmpSkill": [
-        {
-            "hrmsEmpSkillId": 0,
-            "srNo": 5,
-            "hrmsEmployeeId": 0,
-            "hrmsSkillSetId": 2,
-            "skillLevel": 1,
-            "active": true,
-            "deleted": false,
-            "entryStatus": 0
-        }
-    ],
-    "hrmsEmployeePersonalDetail": [
-        {
-            "hrmsEmployeePersonalDetailId": 0,
-            "srNo": 3,
-            "hrmsEmployeeId": 0,
-            "companyId": 10001,
-            "branchId": 201,
-            "employeeName": "Mohammed",
-            "fatherName": "d",
-            "grandfatherName": "da",
-            "familyName": "ad",
-            "dob": "1999-01-01T00:00:00",
-            "gender": 1,
-            "maritalStatus": 1,
-            "numberOfFamilyMembers": 1,
-            "contactId": 2,
-            "active": true,
-            "deleted": false,
-            "entryStatus": 0
-        }
-    ],
-    "hrmsEmployeeRelatives": [
-        {
-            "hrmsEmployeeRelativesId": 0,
-            "srNo": 3,
-            "hrmsEmployeeId": 0,
-            "relativeName": "3",
-            "relation": "1",
-            "workingInCompany": true,
-            "relativeEmployeeId": 12,
-            "active": true,
-            "deleted": false,
-            "entryStatus": 0
-        }
-    ],
-    "hrmsEmployeeCTC": [
-        {
-            "hrmsEmployeeCTCId": 0,
-            "srNo": 2,
-            "hrmsEmployeeId": 0,
-            "companyId": 10001,
-            "branchId": 201,
-            "hrmsAllowanceId": 115,
-            "allowanceValue": 1,
-            "effectiveFrom": "1999-01-01T00:00:00",
-            "effectiveTo": "1999-01-01T00:00:00",
-            "active": true,
-            "deleted": false,
-            "entryStatus": 0
-        }
-    ],
-    "hrmsEmployeeNationalityDetail": [
-        {
-            "hrmsEmployeeNationalityDetailId": 0,
-            "srNo": 2,
-            "hrmsEmployeeId": 0,
-            "nationality": 1,
-            "alternateNationality": 1,
-            "idNumber": "1",
-            "idIssuePlace": "1",
-            "idIssueDate": "1999-01-01T00:00:00",
-            "idExpiryDate": "1999-01-01T00:00:00",
-            "alternativeIDNumber": "1",
-            "alternativeIDIssuePlace": "1",
-            "alternativeIDIssueDate": "1999-01-01T00:00:00",
-            "alternativeIDExpiryDate": "1999-01-01T00:00:00",
-            "passportNumber": "1",
-            "passportIssuePlace": "1",
-            "passportIssueDate": "1999-01-01T00:00:00",
-            "passportExpiryDate": "1999-01-01T00:00:00",
-            "visaType": 1,
-            "visaNumber": "1",
-            "visaIssuePlace": "1",
-            "visaIssueDate": "1999-01-01T00:00:00",
-            "visaExpiryDate": "1999-01-01T00:00:00",
-            "expatWorkPermitType": 1,
-            "expatWorkPermitIssuePlace": "1",
-            "expatWorkPermitIssueDate": "1999-01-01T00:00:00",
-            "expatWorkPermitExpiryDate": "1999-01-01T00:00:00",
-            "active": true,
-            "deleted": false,
-            "entryStatus": 0
-        }
-    ],
-    "hrmsEmployeeAdditionalSkill": []
-}*/
-        /**********************************************************************/
-
         public async Task<SQLResult> Create(HRMSEmployeeEntry pModel)
         {
             SQLResult result = new SQLResult();
@@ -464,7 +203,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                
                 SQLResult lContactResult = new SQLResult();
                 ContactConcrete contactConcrete = new ContactConcrete();
-                lContactResult = await contactConcrete.Create(pModel.ContactDetail, _Context, pModel.AuditColumns);
+                lContactResult = await contactConcrete.Create(pModel.ContactDetail, _Context, pModel.AuditColumns); //show me code of contact concrete
 
                 
                 if (lContactResult.ErrorNo != 0)
@@ -1013,10 +752,10 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                 //EmailConcrete emailConcrete = new EmailConcrete();
                 //lEmailResult = await emailConcrete.Edit(pModel.EmailDetail, _Context, pModel.AuditColumns, true);
 
-                SQLResult lContactResult = new SQLResult();
+                SQLResult lContactResult = new SQLResult(); //show me/wait is this createor edit/?
                 ContactConcrete contactConcrete = new ContactConcrete();
              
-                lContactResult = await contactConcrete.Edit(pModel.ContactDetail, _Context, pModel.AuditColumns,pModel.Active);
+                lContactResult = await contactConcrete.Edit(pModel.ContactDetail, _Context, pModel.AuditColumns,pModel.Active); //show me where this goes
 
                 //if (lMobileResult.ErrorNo != 0)
                 //{

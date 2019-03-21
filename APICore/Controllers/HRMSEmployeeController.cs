@@ -24,8 +24,12 @@ namespace APICore.Controllers
         public HRMSEmployeeController(IHRMSEmployee repo)
         {
             _repo = repo;
-        //    _epo = epo;
+      
         }
+
+        /*********************************************************************/
+        /*        //example: http://localhost:5000/api/HRMSEmployee/40        */
+        /**********************************************************************/
 
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(Int64 id)
@@ -34,13 +38,7 @@ namespace APICore.Controllers
             return Ok(result);
         }
 
-        //[HttpGet("contact/{id}")]
-        //public async Task<IActionResult> GetContact(Int64 id)
-        //{
-
-        //    ContactEntry result = await _epo.GetEntry(id);
-        //    return Ok(result);
-        ////}
+        
 
         [HttpPost("getpagedata/{pScreenId}/{pUserId}/{pRecordsPerPage}/{pPageNo}/{pTableId}/{pLastPage}")]
         public async Task<IActionResult> GetPageData(Int64 pScreenId, Int64 pUserId, Int64 pRecordsPerPage,
@@ -349,6 +347,265 @@ namespace APICore.Controllers
                 return true;
         }
 
+
+        /*********************************************************************/
+        /*        //Json example for Create:
+         *            {
+                	"auditColumns": 
+                			{
+                			"userId":1,
+                			"hostname":"test",
+                			"ipaddress":"test",
+                			"devicetype":"test",
+                			"macaddress":"test",
+                			"companyId":10001
+                			},
+      "hrmsEmployeeId": 0,
+    "employeeCode": "8787",
+    "companyId": 10001,
+    "branchId": 201,
+    "departmentId": 201,
+    "designationId": 2,
+    "managerId": 2,
+    "supervisorId": 2,
+    "subordinateId": 2,
+    "doj": "2017-01-01T00:00:00",
+    "employeeType": 1,
+    "employeeTreatedAs": 1,
+    "fingerprintId": 1,
+    "hrmscvRepositoryId": 2,
+    "hrmsctcId": 2,
+    "bankAccountDetailId": 2,
+    "effectiveFrom": "2017-01-01T00:00:00",
+    "effectiveTo": "2017-01-01T00:00:00",
+    "versionNo": 1,
+    "myParentId": 1,
+    "active": true,
+    "contactDetail": [
+        {
+            "contactDetailId": 0,
+            "contactId": 2,
+            "srNo": 1,
+            "hrmsEmployeeId": 0,
+            "contactTypeId": 1,
+            "titleId": 1,
+            "contactName": "1",
+            "designation": "1",
+            "addressId": 0,
+            "phoneId": 0,
+            "mobileId": 0,
+            "emailId": 0,
+            "default": true,
+            "addressDetail": [
+                {
+                    "addressDetailId": 0,
+                    "addressId": 0,
+                    "mobileId": 0,
+                    "srNo": 1,
+                    "hrmsEmployeeId": 0,
+                    "contactDetailId": 0,
+                    "addressTypeId": 1,
+                    "address": "1sqd",
+                    "countryId": 12001,
+                    "stateId": 120001,
+                    "cityId": 1200001,
+                    "pinCode": "1",
+                    "defaultFlag": true,
+                    "deleted": false,
+                    "active": true,
+                    "entryStatus": 0
+                }
+            ],
+            "mobileDetail": [
+                {
+                    "mobileDetailId": 0,
+                    "mobileId": 0,
+                    "srNo": 1,
+                    "hrmsEmployeeId": 0,
+                    "contactDetailId": 0,
+                    "mobileTypeId": 50100002,
+                    "countryCode": 10001,
+                    "mobileNo": 1234565,
+                    "defaultFlag": true,
+                    "active": true,
+                    "deleted": false,
+                    "entryStatus": 0
+                }
+            ],
+            "emailDetail": [
+                {
+                    "emailDetailId": 0,
+                    "emailId": 0,
+                    "srNo": 1,
+                    "hrmsEmployeeId": 0,
+                    "contactDetailId": 0,
+                    "emailTypeId": 1,
+                    "email": "132edfw",
+                    "default": true,
+                    "deleted": false,
+                    "active": true,
+                    "entryStatus": 0
+                }
+            ],
+            "phoneDetail": [
+                {
+                    "phoneDetailId": 0,
+                    "hrmsEmployeeId": 0,
+                    "contactDetailId": 0,
+                    "phoneId": 0,
+                    "srNo": 1,
+                    "phoneTypeId": 1,
+                    "phonePrefixCode": 1,
+                    "phoneNo": 1,
+                    "extension": 1,
+                    "default": true,
+                    "active": true,
+                    "deleted": false,
+                    "entryStatus": 0
+                }
+            ],
+            "deleted": false,
+            "active": true,
+            "entryStatus": 0
+        }
+    ],
+    "hrmsEmpEducation": [
+        {
+            "hrmsEmpEducationId": 0,
+            "srNo": 5,
+            "hrmsEmployeeId": 0,
+            "certDegreeName": "a",
+            "major": "a",
+            "uniInstituteName": "a",
+            "startMonth": 1,
+            "startYear": 1,
+            "completionMonth": 1,
+            "completionYear": 1,
+            "grade": "1",
+            "deleted": false,
+            "entryStatus": 0
+        }
+    ],
+    "hrmsEmpExperience": [
+        {
+            "hrmsEmpExperienceId": 0,
+            "srNo": 4,
+            "hrmsEmployeeId": 0,
+            "companyName": "j",
+            "designation": "j",
+            "joinMonth": 2,
+            "joinYear": 2,
+            "leaveMonth": 2,
+            "leaveYear": 2,
+            "monthlySalary": 12,
+            "countryId": 12001,
+            "stateId": 120001,
+            "cityId": 1200001,
+            "description": "12",
+            "deleted": false,
+            "entryStatus": 0
+        }
+    ],
+    "hrmsEmpSkill": [
+        {
+            "hrmsEmpSkillId": 0,
+            "srNo": 5,
+            "hrmsEmployeeId": 0,
+            "hrmsSkillSetId": 2,
+            "skillLevel": 1,
+            "active": true,
+            "deleted": false,
+            "entryStatus": 0
+        }
+    ],
+    "hrmsEmployeePersonalDetail": [
+        {
+            "hrmsEmployeePersonalDetailId": 0,
+            "srNo": 3,
+            "hrmsEmployeeId": 0,
+            "companyId": 10001,
+            "branchId": 201,
+            "employeeName": "Mohammed",
+            "fatherName": "d",
+            "grandfatherName": "da",
+            "familyName": "ad",
+            "dob": "1999-01-01T00:00:00",
+            "gender": 1,
+            "maritalStatus": 1,
+            "numberOfFamilyMembers": 1,
+            "contactId": 2,
+            "active": true,
+            "deleted": false,
+            "entryStatus": 0
+        }
+    ],
+    "hrmsEmployeeRelatives": [
+        {
+            "hrmsEmployeeRelativesId": 0,
+            "srNo": 3,
+            "hrmsEmployeeId": 0,
+            "relativeName": "3",
+            "relation": "1",
+            "workingInCompany": true,
+            "relativeEmployeeId": 12,
+            "active": true,
+            "deleted": false,
+            "entryStatus": 0
+        }
+    ],
+    "hrmsEmployeeCTC": [
+        {
+            "hrmsEmployeeCTCId": 0,
+            "srNo": 2,
+            "hrmsEmployeeId": 0,
+            "companyId": 10001,
+            "branchId": 201,
+            "hrmsAllowanceId": 115,
+            "allowanceValue": 1,
+            "effectiveFrom": "1999-01-01T00:00:00",
+            "effectiveTo": "1999-01-01T00:00:00",
+            "active": true,
+            "deleted": false,
+            "entryStatus": 0
+        }
+    ],
+    "hrmsEmployeeNationalityDetail": [
+        {
+            "hrmsEmployeeNationalityDetailId": 0,
+            "srNo": 2,
+            "hrmsEmployeeId": 0,
+            "nationality": 1,
+            "alternateNationality": 1,
+            "idNumber": "1",
+            "idIssuePlace": "1",
+            "idIssueDate": "1999-01-01T00:00:00",
+            "idExpiryDate": "1999-01-01T00:00:00",
+            "alternativeIDNumber": "1",
+            "alternativeIDIssuePlace": "1",
+            "alternativeIDIssueDate": "1999-01-01T00:00:00",
+            "alternativeIDExpiryDate": "1999-01-01T00:00:00",
+            "passportNumber": "1",
+            "passportIssuePlace": "1",
+            "passportIssueDate": "1999-01-01T00:00:00",
+            "passportExpiryDate": "1999-01-01T00:00:00",
+            "visaType": 1,
+            "visaNumber": "1",
+            "visaIssuePlace": "1",
+            "visaIssueDate": "1999-01-01T00:00:00",
+            "visaExpiryDate": "1999-01-01T00:00:00",
+            "expatWorkPermitType": 1,
+            "expatWorkPermitIssuePlace": "1",
+            "expatWorkPermitIssueDate": "1999-01-01T00:00:00",
+            "expatWorkPermitExpiryDate": "1999-01-01T00:00:00",
+            "active": true,
+            "deleted": false,
+            "entryStatus": 0
+        }
+    ],
+    "hrmsEmployeeAdditionalSkill": []
+}*/
+        /**********************************************************************/
+
         [HttpPost("create")]
         public async Task<IActionResult> Create([FromBody]HRMSEmployeeEntry pModel)
         {
@@ -377,7 +634,262 @@ namespace APICore.Controllers
             }
         }
 
-
+        /*********************************************************************/
+        /*        //Json example for Edit:    {
+                	"auditColumns": 
+                			{
+                			"userId":1,
+                			"hostname":"test",
+                			"ipaddress":"test",
+                			"devicetype":"test",
+                			"macaddress":"test",
+                			"companyId":10001
+                			},
+    "hrmsEmployeeId": 46,
+    "employeeCode": "8787",
+    "companyId": 10001,
+    "branchId": 201,
+    "departmentId": 201,
+    "designationId": 2,
+    "managerId": 2,
+    "supervisorId": 2,
+    "subordinateId": 2,
+    "doj": "2017-01-01T00:00:00",
+    "employeeType": 1,
+    "employeeTreatedAs": 1,
+    "fingerprintId": 1,
+    "hrmscvRepositoryId": 2,
+    "hrmsctcId": 2,
+    "bankAccountDetailId": 2,
+    "effectiveFrom": "2017-01-01T00:00:00",
+    "effectiveTo": "2017-01-01T00:00:00",
+    "versionNo": 1,
+    "myParentId": 1,
+    "active": true,
+    "contactDetail": [
+        {
+            "contactDetailId": 17,
+            "contactId": 616,
+            "srNo": 1,
+            "hrmsEmployeeId": 46,
+            "contactTypeId": 50100002,
+            "titleId": 50000600001,
+            "contactName": "1",
+            "designation": "1",
+            "addressId": 20031,
+            "phoneId": 425,
+            "mobileId": 742,
+            "emailId": 523,
+            "default": true,
+            "addressDetail": [
+                {
+                    "addressDetailId": 30,
+                    "addressId": 20031,
+                    "srNo": 1,
+                    "hrmsEmployeeId": 46,
+                    "contactDetailId": 17,
+                    "addressTypeId": 50100002,
+                    "address": "1sqd",
+                    "countryId": 12001,
+                    "stateId": 120001,
+                    "cityId": 1200001,
+                    "pinCode": "1",
+                    "defaultFlag": true,
+                    "deleted": false,
+                    "active": true,
+                    "entryStatus": 1
+                }
+            ],
+            "mobileDetail": [
+                {
+                    "mobileDetailId": 44,
+                    "mobileId": 742,
+                    "srNo": 1,
+                    "hrmsEmployeeId": 46,
+                    "contactDetailId": 17,
+                    "mobileTypeId": 50100002,
+                    "countryCode": 10001,
+                    "mobileNo": 1234565,
+                    "defaultFlag": true,
+                    "active": true,
+                    "deleted": false,
+                    "entryStatus": 1
+                }
+            ],
+            "emailDetail": [
+                {
+                    "emailDetailId": 24,
+                    "emailId": 523,
+                    "srNo": 1,
+                    "hrmsEmployeeId": 46,
+                    "contactDetailId": 17,
+                    "emailTypeId": 50100002,
+                    "email": "132edfw",
+                    "default": true,
+                    "deleted": false,
+                    "active": true,
+                    "entryStatus": 1
+                }
+            ],
+            "phoneDetail": [
+                {
+                    "phoneDetailId": 24,
+                    "hrmsEmployeeId": 46,
+                    "contactDetailId": 17,
+                    "phoneId": 425,
+                    "srNo": 1,
+                    "phoneTypeId": 50100002,
+                    "phonePrefixCode": 1,
+                    "phoneNo": 1,
+                    "extension": 1,
+                    "default": true,
+                    "active": true,
+                    "deleted": false,
+                    "entryStatus": 1
+                }
+            ],
+            "deleted": false,
+            "active": true,
+            "entryStatus": 1
+        }
+    ],
+    "hrmsEmpEducation": [
+        {
+            "hrmsEmpEducationId": 26,
+            "srNo": 5,
+            "hrmsEmployeeId": 46,
+            "certDegreeName": "a",
+            "major": "a",
+            "uniInstituteName": "a",
+            "startMonth": 1,
+            "startYear": 1,
+            "completionMonth": 1,
+            "completionYear": 1,
+            "grade": "1",
+            "deleted": false,
+            "entryStatus": 1
+        }
+    ],
+    "hrmsEmpExperience": [
+        {
+            "hrmsEmpExperienceId": 26,
+            "srNo": 4,
+            "hrmsEmployeeId": 46,
+            "companyName": "j",
+            "designation": "j",
+            "joinMonth": 2,
+            "joinYear": 2,
+            "leaveMonth": 2,
+            "leaveYear": 2,
+            "monthlySalary": 12,
+            "countryId": 12001,
+            "stateId": 120001,
+            "cityId": 1200001,
+            "description": "12",
+            "deleted": false,
+            "entryStatus": 1
+        }
+    ],
+    "hrmsEmpSkill": [
+        {
+            "hrmsEmpSkillId": 31,
+            "srNo": 5,
+            "hrmsEmployeeId": 46,
+            "hrmsSkillSetId": 2,
+            "skillLevel": 1,
+            "active": true,
+            "deleted": false,
+            "entryStatus": 1
+        }
+    ],
+    "hrmsEmployeePersonalDetail": [
+        {
+            "hrmsEmployeePersonalDetailId": 33,
+            "srNo": 3,
+            "hrmsEmployeeId": 46,
+            "companyId": 10001,
+            "branchId": 201,
+            "employeeName": "Mohammed",
+            "fatherName": "d",
+            "grandfatherName": "da",
+            "familyName": "ad",
+            "dob": "1999-01-01T00:00:00",
+            "gender": 1,
+            "maritalStatus": 1,
+            "numberOfFamilyMembers": 1,
+            "contactId": 616,
+            "active": true,
+            "deleted": false,
+            "entryStatus": 1
+        }
+    ],
+    "hrmsEmployeeRelatives": [
+        {
+            "hrmsEmployeeRelativesId": 24,
+            "srNo": 3,
+            "hrmsEmployeeId": 46,
+            "relativeName": "3",
+            "relation": "1",
+            "workingInCompany": true,
+            "relativeEmployeeId": 12,
+            "active": true,
+            "deleted": false,
+            "entryStatus": 1
+        }
+    ],
+    "hrmsEmployeeCTC": [
+        {
+            "hrmsEmployeeCTCId": 29,
+            "srNo": 2,
+            "hrmsEmployeeId": 46,
+            "companyId": 10001,
+            "branchId": 201,
+            "hrmsAllowanceId": 115,
+            "allowanceValue": 1,
+            "effectiveFrom": "1999-01-01T00:00:00",
+            "effectiveTo": "1999-01-01T00:00:00",
+            "active": true,
+            "deleted": false,
+            "entryStatus": 1
+        }
+    ],
+    "hrmsEmployeeNationalityDetail": [
+        {
+            "hrmsEmployeeNationalityDetailId": 26,
+            "srNo": 2,
+            "hrmsEmployeeId": 46,
+            "nationality": 1,
+            "alternateNationality": 1,
+            "idNumber": "1",
+            "idIssuePlace": "1",
+            "idIssueDate": "1999-01-01T00:00:00",
+            "idExpiryDate": "1999-01-01T00:00:00",
+            "alternativeIDNumber": "1",
+            "alternativeIDIssuePlace": "1",
+            "alternativeIDIssueDate": "1999-01-01T00:00:00",
+            "alternativeIDExpiryDate": "1999-01-01T00:00:00",
+            "passportNumber": "1",
+            "passportIssuePlace": "1",
+            "passportIssueDate": "1999-01-01T00:00:00",
+            "passportExpiryDate": "1999-01-01T00:00:00",
+            "visaType": 1,
+            "visaNumber": "1",
+            "visaIssuePlace": "1",
+            "visaIssueDate": "1999-01-01T00:00:00",
+            "visaExpiryDate": "1999-01-01T00:00:00",
+            "expatWorkPermitType": 1,
+            "expatWorkPermitIssuePlace": "1",
+            "expatWorkPermitIssueDate": "1999-01-01T00:00:00",
+            "expatWorkPermitExpiryDate": "1999-01-01T00:00:00",
+            "active": true,
+            "deleted": false,
+            "entryStatus": 1
+        }
+    ],
+    "hrmsEmployeeAdditionalSkill": []
+}
+         *           */
+        /**********************************************************************/
         [HttpPost("edit")]
         public async Task<IActionResult> Edit([FromBody]HRMSEmployeeEntry pModel)
         {
