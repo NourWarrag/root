@@ -562,7 +562,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                                                 , new SqlMetaData("SrNo", SqlDbType.Int)
                                                 , new SqlMetaData("mHRMSEmployeeId", SqlDbType.BigInt)
                                                 , new SqlMetaData("RelativeName", SqlDbType.NVarChar, 255)
-                                                , new SqlMetaData("Relation", SqlDbType.BigInt)
+                                                , new SqlMetaData("RelationId", SqlDbType.BigInt)
                                                 , new SqlMetaData("WorkingInCompany", SqlDbType.Bit)
                                                 , new SqlMetaData("RelativeEmployeeId", SqlDbType.BigInt)
                                                 , new SqlMetaData("Active", SqlDbType.Bit)
@@ -574,7 +574,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetInt32(1, item.SrNo);
                     pRow.SetInt64(2, item.HRMSEmployeeId);
                     pRow.SetString(3, item.RelativeName);
-                    pRow.SetInt64(4, item.Relation);
+                    pRow.SetInt64(4, item.RelationId);
                     pRow.SetBoolean(5, item.WorkingInCompany);
                     pRow.SetInt64(6, item.RelativeEmployeeId);
                     pRow.SetBoolean(7, item.Active);
@@ -1129,7 +1129,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                                                 , new SqlMetaData("SrNo", SqlDbType.Int)
                                                 , new SqlMetaData("mHRMSEmployeeId", SqlDbType.BigInt)
                                                 , new SqlMetaData("RelativeName", SqlDbType.NVarChar, 255)
-                                                , new SqlMetaData("Relation", SqlDbType.BigInt)
+                                                , new SqlMetaData("RelationId", SqlDbType.BigInt)
                                                 , new SqlMetaData("WorkingInCompany", SqlDbType.Bit)
                                                 , new SqlMetaData("RelativeEmployeeId", SqlDbType.BigInt)
                                                 , new SqlMetaData("Active", SqlDbType.Bit)
@@ -1141,7 +1141,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     pRow.SetInt32(1, item.SrNo);
                     pRow.SetInt64(2, item.HRMSEmployeeId);
                     pRow.SetString(3, item.RelativeName);
-                    pRow.SetInt64(4, item.Relation);
+                    pRow.SetInt64(4, item.RelationId);
                     pRow.SetBoolean(5, item.WorkingInCompany);
                     pRow.SetInt64(6, item.RelativeEmployeeId);
                     pRow.SetBoolean(7, item.Active);

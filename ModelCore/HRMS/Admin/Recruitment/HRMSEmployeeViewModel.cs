@@ -473,7 +473,7 @@ namespace ModelCore.HRMS.Admin.Recruitment
 
         [Required]
         [Display(Name = "Relation")]
-        public Int64 Relation { get; set; }
+        public Int64 RelationId { get; set; }
 
         [Required]
         [Display(Name = "WorkingInCompany")]
