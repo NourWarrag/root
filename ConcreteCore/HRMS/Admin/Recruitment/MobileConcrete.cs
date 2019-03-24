@@ -14,7 +14,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
 {
     public class MobileConcrete
     {
-        public async Task<SQLResult> Create(List<MobileDetail> pModel, DatabaseContext _Context,AuditColumns auditColumns)
+        public async Task<SQLResult> Create(List<HRMSEmployeeMobileDetail> pModel, DatabaseContext _Context,AuditColumns auditColumns)
         {
             SQLResult result = new SQLResult();
            
@@ -27,7 +27,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     TypeName = "typ_mMobileDetail"
                 };
                 var pRowCollection_typ_mMobileDetail = new List<SqlDataRecord>();
-                foreach (MobileDetail item in pModel)
+                foreach (HRMSEmployeeMobileDetail item in pModel)
                 {
 
                     SqlDataRecord pRow = new SqlDataRecord(
@@ -88,7 +88,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
             return result;
         }
 
-        public async Task<SQLResult> Edit(List<MobileDetail> pModel,DatabaseContext _Context,AuditColumns auditColumns,bool Active)
+        public async Task<SQLResult> Edit(List<HRMSEmployeeMobileDetail> pModel,DatabaseContext _Context,AuditColumns auditColumns,bool Active)
         {
             SQLResult result = new SQLResult();
         

@@ -81,7 +81,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
 
         //}
 
-        public async Task<SQLResult> Create(List<ContactDetail> pModel, DatabaseContext _Context,AuditColumns auditColumns)
+        public async Task<SQLResult> Create(List<HRMSEmployeeContactDetail> pModel, DatabaseContext _Context,AuditColumns auditColumns)
         {
             SQLResult result = new SQLResult();
             try
@@ -205,7 +205,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
 
         }
 
-        public async Task<SQLResult> Edit(List<ContactDetail> pModel,DatabaseContext _Context,
+        public async Task<SQLResult> Edit(List<HRMSEmployeeContactDetail> pModel,DatabaseContext _Context,
             AuditColumns auditColumns,bool Active)
         {
             SQLResult result = new SQLResult();

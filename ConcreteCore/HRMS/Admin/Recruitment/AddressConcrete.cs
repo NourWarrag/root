@@ -14,7 +14,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
 {
     public class AddressConcrete
     {
-        public async Task<SQLResult> Create(List<AddressDetail> pModel, DatabaseContext _Context,AuditColumns auditColumns)
+        public async Task<SQLResult> Create(List<HRMSEmployeeAddressDetail> pModel, DatabaseContext _Context,AuditColumns auditColumns)
         {
          
             SQLResult result = new SQLResult();
@@ -97,7 +97,7 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
 
         }
 
-        public async Task<SQLResult> Edit(List<AddressDetail> pModel,DatabaseContext _Context,AuditColumns auditColumns,bool Active)
+        public async Task<SQLResult> Edit(List<HRMSEmployeeAddressDetail> pModel,DatabaseContext _Context,AuditColumns auditColumns,bool Active)
         {
             SQLResult result = new SQLResult();
            

@@ -186,7 +186,7 @@ namespace ModelCore.HRMS.Admin.Recruitment
 
       //  public List<EmailDetail> EmailDetail { get; set; }
 
-        public List<ContactDetail> ContactDetail { get; set; }
+        public List<HRMSEmployeeContactDetail> ContactDetail { get; set; }
 
       //  public List<AddressDetail> AddressDetail { get; set; }
 
@@ -473,7 +473,7 @@ namespace ModelCore.HRMS.Admin.Recruitment
 
         [Required]
         [Display(Name = "Relation")]
-        public string Relation { get; set; }
+        public Int64 Relation { get; set; }
 
         [Required]
         [Display(Name = "WorkingInCompany")]
@@ -707,7 +707,9 @@ namespace ModelCore.HRMS.Admin.Recruitment
         public EntryStatus EntryStatus { get; set; }
     }
 
-    public class ContactDetail
+
+
+    public class HRMSEmployeeContactDetail
     {
         [Key]
 
@@ -763,13 +765,13 @@ namespace ModelCore.HRMS.Admin.Recruitment
         [Display(Name = "Default")]
         public bool Default { get; set; }
 
-        public List<AddressDetail> AddressDetail { get; set; }
+        public List<HRMSEmployeeAddressDetail> AddressDetail { get; set; }
 
-       public List<MobileDetail> MobileDetail { get; set; }
+       public List<HRMSEmployeeMobileDetail> MobileDetail { get; set; }
 
-        public List<EmailDetail> EmailDetail { get; set; }
+        public List<HRMSEmployeeEmailDetail> EmailDetail { get; set; }
 
-        public List<PhoneDetail> PhoneDetail { get; set; }
+        public List<HRMSEmployeePhoneDetail> PhoneDetail { get; set; }
 
         [Required]
         [Display(Name = "Deleted")]
@@ -786,7 +788,7 @@ namespace ModelCore.HRMS.Admin.Recruitment
 
     }
 
-    public class AddressDetail
+    public class HRMSEmployeeAddressDetail
     {
         [Key]
 
@@ -852,7 +854,7 @@ namespace ModelCore.HRMS.Admin.Recruitment
 
     }
 
-    public class EmailDetail
+    public class HRMSEmployeeEmailDetail
     {
         [Key]
 
@@ -902,7 +904,7 @@ namespace ModelCore.HRMS.Admin.Recruitment
         public EntryStatus EntryStatus { get; set; }
     }
 
-    public class MobileDetail
+    public class HRMSEmployeeMobileDetail
     {
         [Key]
 
@@ -953,7 +955,7 @@ namespace ModelCore.HRMS.Admin.Recruitment
         public EntryStatus EntryStatus { get; set; }
     }
 
-    public class PhoneDetail
+    public class HRMSEmployeePhoneDetail
     {
         [Key]
 
