@@ -302,12 +302,12 @@ namespace APICore.Controllers
                     {
                         if (item.HRMSEmpSkillId <= 0)
                         {
-                            ModelState.AddModelError("", Messages.Blank("Cost center ledger entry"));
+                            ModelState.AddModelError("", Messages.Blank("skill ID!"));
                             return false;
                         }
                         if (item.HRMSEmployeeId <= 1)
                         {
-                            ModelState.AddModelError("", Messages.Blank("Cost center entry"));
+                            ModelState.AddModelError("", Messages.Blank("Employee ID"));
                             return false;
                         }
                     }
@@ -344,7 +344,327 @@ namespace APICore.Controllers
                 }
             }
 
-                return true;
+            foreach (HRMSEmployeeAdditionalSkill item in pModel.HRMSEmployeeAdditionalSkill)
+            {
+
+                if (item.Deleted == false)
+                {
+                    if (isUpdateValidation == true && (int)item.EntryStatus == 1)
+                    {
+
+                        if (item.HRMSEmployeeAdditionalSkillId <= 1)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("mHRMSEmployeeAdditionalSkillId"));
+                            return false;
+                        }
+                        if (item.HRMSEmployeeId <= 1)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("mHRMSEmployeeId"));
+                            return false;
+                        }
+                    }
+                    if (item.SrNo <= 0)
+                    {
+                        ModelState.AddModelError("", Messages.Blank("SrNo"));
+                        return false;
+                    }
+
+                    if (item.Skill.Trim().Length == 0)
+                    {
+                        ModelState.AddModelError("", Messages.Blank("Skill"));
+                        return false;
+                    }
+                    if (item.SkillLevel <= 0)
+                    {
+                        ModelState.AddModelError("", Messages.Blank("SkillLevel"));
+                        return false;
+                    }
+                    if (item.EntryStatus <= 0)
+                    {
+                        ModelState.AddModelError("", Messages.Blank("EntryStatus"));
+                        return false;
+                    }
+                }
+            }
+
+            foreach (HRMSEmployeeNationalityDetail item in pModel.HRMSEmployeeNationalityDetail)
+            {
+                if (item.Deleted == false)
+                {
+                    if (isUpdateValidation == true && (int)item.EntryStatus == 1)
+                    {
+                        if (item.HRMSEmployeeNationalityDetailId <= 1)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("mHRMSEmployeeNationalityDetailId"));
+                            return false;
+                        }
+                        if (item.HRMSEmployeeId <= 1)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("mHRMSEmployeeId"));
+                            return false;
+                        }
+                    }
+                        if (item.SrNo <= 0)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("SrNo"));
+                            return false;
+                        }
+                       
+                        if (item.Nationality <= 0)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("Nationality"));
+                            return false;
+                        }
+                        if (item.AlternateNationality <= 0)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("AlternateNationality"));
+                            return false;
+                        }
+                        if (item.IDNumber.Trim().Length == 0)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("IDNumber"));
+                            return false;
+                        }
+                        if (item.IDIssuePlace.Trim().Length == 0)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("IDIssuePlace"));
+                            return false;
+                        }
+                        if (item.IDIssueDate == null)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("IDIssueDate"));
+                            return false;
+                        }
+                        if (item.IDExpiryDate == null)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("IDExpiryDate"));
+                            return false;
+                        }
+                        if (item.AlternativeIDNumber.Trim().Length == 0)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("AlternativeIDNumber"));
+                            return false;
+                        }
+                        if (item.AlternativeIDIssuePlace.Trim().Length == 0)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("AlternativeIDIssuePlace"));
+                            return false;
+                        }
+                        if (item.AlternativeIDIssueDate == null)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("AlternativeIDIssueDate"));
+                            return false;
+                        }
+                        if (item.AlternativeIDExpiryDate == null)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("AlternativeIDExpiryDate"));
+                            return false;
+                        }
+                        if (item.PassportNumber.Trim().Length == 0)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("PassportNumber"));
+                            return false;
+                        }
+                        if (item.PassportIssuePlace.Trim().Length == 0)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("PassportIssuePlace"));
+                            return false;
+                        }
+                        if (item.PassportIssueDate == null)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("PassportIssueDate"));
+                            return false;
+                        }
+                        if (item.PassportExpiryDate == null)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("PassportExpiryDate"));
+                            return false;
+                        }
+                        if (item.VisaType <= 0)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("VisaType"));
+                            return false;
+                        }
+                        if (item.VisaNumber.Trim().Length == 0)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("VisaNumber"));
+                            return false;
+                        }
+                        if (item.VisaIssuePlace.Trim().Length == 0)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("VisaIssuePlace"));
+                            return false;
+                        }
+                        if (item.VisaIssueDate == null)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("VisaIssueDate"));
+                            return false;
+                        }
+                        if (item.VisaExpiryDate == null)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("VisaExpiryDate"));
+                            return false;
+                        }
+                        if (item.ExpatWorkPermitType <= 0)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("ExpatWorkPermitType"));
+                            return false;
+                        }
+                        if (item.ExpatWorkPermitIssuePlace.Trim().Length == 0)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("ExpatWorkPermitIssuePlace"));
+                            return false;
+                        }
+                        if (item.ExpatWorkPermitIssueDate == null)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("ExpatWorkPermitIssueDate"));
+                            return false;
+                        }
+                        if (item.ExpatWorkPermitExpiryDate == null)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("ExpatWorkPermitExpiryDate"));
+                            return false;
+                        }
+                        if (item.EntryStatus <= 0)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("EntryStatus"));
+                            return false;
+                        }
+                    }
+                
+            }
+
+            foreach (HRMSEmployeePersonalDetail item in pModel.HRMSEmployeePersonalDetail)
+            {
+                if (item.Deleted == false)
+                {
+                    if (isUpdateValidation == true && (int)item.EntryStatus == 1)
+                    {
+                        if (item.HRMSEmployeePersonalDetailId <= 1)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("mHRMSEmployeePersonalDetailId"));
+                            return false;
+                        }
+                        if (item.HRMSEmployeeId <= 1)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("mHRMSEmployeeId"));
+                            return false;
+                        }
+                    }
+                if (item.SrNo <= 0)
+                {
+                    ModelState.AddModelError("", Messages.Blank("SrNo"));
+                    return false;
+                }
+                if (item.HRMSEmployeeId <= 1)
+                {
+                    ModelState.AddModelError("", Messages.Blank("mHRMSEmployeeId"));
+                    return false;
+                }
+                if (item.CompanyId <= 1)
+                {
+                    ModelState.AddModelError("", Messages.Blank("mCompanyId"));
+                    return false;
+                }
+                if (item.BranchId <= 1)
+                {
+                    ModelState.AddModelError("", Messages.Blank("mBranchId"));
+                    return false;
+                }
+                if (item.EmployeeName.Trim().Length == 0)
+                {
+                    ModelState.AddModelError("", Messages.Blank("EmployeeName"));
+                    return false;
+                }
+                if (item.FatherName.Trim().Length == 0)
+                {
+                    ModelState.AddModelError("", Messages.Blank("FatherName"));
+                    return false;
+                }
+                if (item.GrandfatherName.Trim().Length == 0)
+                {
+                    ModelState.AddModelError("", Messages.Blank("GrandfatherName"));
+                    return false;
+                }
+                if (item.FamilyName.Trim().Length == 0)
+                {
+                    ModelState.AddModelError("", Messages.Blank("FamilyName"));
+                    return false;
+                }
+                if (item.DOB == null)
+                {
+                    ModelState.AddModelError("", Messages.Blank("DOB"));
+                    return false;
+                }
+                if (item.Gender <= 0)
+                {
+                    ModelState.AddModelError("", Messages.Blank("Gender"));
+                    return false;
+                }
+                if (item.MaritalStatus <= 0)
+                {
+                    ModelState.AddModelError("", Messages.Blank("MaritalStatus"));
+                    return false;
+                }
+                if (item.NumberOfFamilyMembers <= 0)
+                {
+                    ModelState.AddModelError("", Messages.Blank("NumberOfFamilyMembers"));
+                    return false;
+                }
+                if (item.ContactId <= 1)
+                {
+                    ModelState.AddModelError("", Messages.Blank("mContactId"));
+                    return false;
+                }
+                if (item.EntryStatus <= 0)
+                {
+                    ModelState.AddModelError("", Messages.Blank("EntryStatus"));
+                    return false;
+                }
+            }
+            }
+
+            foreach (HRMSEmployeeRelatives item in pModel.HRMSEmployeeRelatives)
+            {
+                if (item.Deleted == false)
+                {
+                    if (isUpdateValidation == true && (int)item.EntryStatus == 1)
+                    {
+                        if (item.HRMSEmployeeRelativesId <= 1)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("mHRMSEmployeeRelativesId"));
+                            return false;
+                        }
+                        if (item.HRMSEmployeeId <= 1)
+                        {
+                            ModelState.AddModelError("", Messages.Blank("mHRMSEmployeeId"));
+                            return false;
+                        }
+                    }
+                    if (item.SrNo <= 0)
+                    {
+                        ModelState.AddModelError("", Messages.Blank("SrNo"));
+                        return false;
+                    }
+
+                    if (item.RelativeName.Trim().Length == 0)
+                    {
+                        ModelState.AddModelError("", Messages.Blank("RelativeName"));
+                        return false;
+                    }
+                    if (item.RelationId <= 0)
+                    {
+                        ModelState.AddModelError("", Messages.Blank("RelationId"));
+                        return false;
+                    }
+                    if (item.EntryStatus <= 0)
+                    {
+                        ModelState.AddModelError("", Messages.Blank("EntryStatus"));
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
 
 
