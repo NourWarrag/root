@@ -9,56 +9,54 @@ using static ModelCore.Misc.Enums;
 
 namespace ModelCore.HRMS.Admin.Recruitment
 {
-     public class HRMSInventoryViewModel
-    {
+    public class HRMSInventoryViewModel
+     {
 
-    }
+     }
 
-    [NotMapped]
+        [NotMapped]
         public class HRMSInventoryIndex
-    {
-        [Key]
-        [Required]
-        [Display(Name = "mHRMSInventoryId")]
-        public Int64 HRMSInventoryId { get; set; }
+        {
+              [Key]
+              [Required]
+              [Display(Name = "mHRMSInventoryId")]
+              public Int64 HRMSInventoryId { get; set; }
         
-        [Required]
-        [Display(Name = "InventoryName")]
-        public string InventoryName { get; set; }
-        
-        [Required]
-        [Display(Name = "Active")]
-        public bool Active { get; set; }
+              [Required]
+              [Display(Name = "InventoryName")]
+              public string InventoryName { get; set; }
 
-        public Int64 TotalPages { get; set; }
+              [Required]
+              [Display(Name = "Active")]
+              public bool Active { get; set; }
 
-        public Int64 TotalRecords { get; set; }
-    }
+              public Int64 TotalPages { get; set; }
 
-[NotMapped]
+              public Int64 TotalRecords { get; set; }
+        }
+
+        [NotMapped]
         public class HRMSInventoryEntry
-    {
-        [Key]
-        [Required]
-        [Display(Name = "mHRMSInventoryId")]
-        public Int64 HRMSInventoryId { get; set; }
+        {
+                [Key]
+                [Required]
+                [Display(Name = "mHRMSInventoryId")]
+                public Int64 HRMSInventoryId { get; set; }
         
-        [Required]
-        [Display(Name = "InventoryName")]
-        public string InventoryName { get; set; }
+                [Required]
+                [Display(Name = "InventoryName")]
+                public string InventoryName { get; set; }
         
-        [Required]
-        [Display(Name = "Active")]
-        public bool Active { get; set; }
+                [Required]
+                [Display(Name = "Active")]
+                public bool Active { get; set; }
 
+                public List<HRMSInventoryDetails> HRMSInventoryDetail { get; set; }
 
-    public List<HRMSInventoryDetails> HRMSInventoryDetail { get; set; }
+                [Required]
+                public AuditColumns AuditColumns;
 
-
-        [Required]
-        public AuditColumns AuditColumns;
-
-    }
+        }
 
     public class HRMSInventoryDetails
     {

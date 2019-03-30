@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ModelCore.HRMS.Admin.Recruitment;
+using System.Data;
 
 namespace InterfaceCore
 {
@@ -13,6 +14,7 @@ namespace InterfaceCore
         Task<List<HRMSAttendanceIndex>> GetIndex(Int64 ScreenId, Int64 UserId, Int64 RecordsPerPage, Int64 PageNo, Int64 TableId, Boolean LastPage);
         Task<SQLResult> Create(HRMSAttendanceEntry pModel);
         Task<SQLResult> Edit(HRMSAttendanceEntry pModel);
+        SQLResult BulkCopy(DataTable table);
        // Task<SQLResult> Delete(HRMSAttendanceEntry pModel);
     }
 }

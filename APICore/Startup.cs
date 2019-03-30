@@ -68,11 +68,13 @@ namespace APICore
             services.AddTransient<ICurrency, CurrencyConcrete>();
             services.AddTransient<ITRIALSp, TRIALSpConcrete>();
             services.AddTransient<IHRMSRolesResponsibility, HRMSRolesResponsibilityConcrete>();
-            services.AddTransient<IHRMSAttribute, HRMSAttributeConcrete>();
+            
             services.AddTransient<IHRMSEmployee, HRMSEmployeeConcrete>();
             services.AddTransient<IHRMSInventory, HRMSInventoryConcrete>();
             services.AddTransient<IHRMSAllowance, HRMSAllowanceConcrete>();
-           // services.AddTransient<IContact, ContactConcrete>();
+            services.AddTransient<IDesignation, DesignationConcrete>();
+            services.AddTransient<IHRMSAttendance, HRMSAttendanceConcrete>();
+            services.AddTransient<IHRMSLeaveTransaction, HRMSLeaveTransactionConcrete>();
 
 
 

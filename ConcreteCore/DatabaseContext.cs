@@ -59,9 +59,9 @@ namespace ConcreteCore
         public DbSet<HRMSRolesResponsibilityIndex> HRMSRolesResponsibilityIndex { get; set; }
         public DbSet<HRMSRolesResponsibilityEntry> HRMSRolesResponsibilityEntry { get; set; }
 
-        // Attribute
-        public DbSet<HRMSAttributeIndex> HRMSAttributeIndex { get; set; }
-        public DbSet<HRMSAttributeEntry> HRMSAttributeEntry { get; set; }
+        //// Attribute
+        //public DbSet<HRMSAttributeIndex> HRMSAttributeIndex { get; set; }
+        //public DbSet<HRMSAttributeEntry> HRMSAttributeEntry { get; set; }
 
         //Employee
         public DbSet<HRMSEmployeeIndex> HRMSEmployeeIndex { get; set; }
@@ -97,5 +97,17 @@ namespace ConcreteCore
         public DbSet<HRMSAttendanceIndex> HRMSAttendanceIndex { get; set; }
         public DbSet<HRMSAttendanceEntry> HRMSAttendanceEntry { get; set; }
 
+
+        //Designation
+        public DbSet<DesignationIndex> DesignationIndex { get; set;  }
+        public DbSet<DesignationEntry> DesignationEntry { get; set; }
+        public DbSet<DesignationDetail> GetDesignationDetail { get; internal set; }
+        public DbSet<HRMSDesignationCTC> GetHRMSDesignationCTC { get; internal set; }
+        public DbSet<HRMSDesignationInventoryDetail> GetHRMSDesignationInventoryDetail { get; internal set; }
+
+
+        //Leave Transaction
+        public DbSet<HRMSLeaveTransactionIndex> HRMSLeaveTransactionIndex { get; set; }
+        public DbSet<HRMSLeaveTransactionEntry> HRMSLeaveTransactionEntry { get; set; }
     }
 }

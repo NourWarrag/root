@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Data;
-using Microsoft.SqlServer.Server;
+
 namespace ConcreteCore.HRMS.Admin.Recruitment
 {
     public class HRMSAttendanceConcrete: IHRMSAttendance
@@ -23,7 +23,8 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
         {
             try
             {
-                HRMSAttendanceEntry result = await _Context.HRMSAttendanceEntry.FromSql("Exec spmHRMSAttendanceEntry @pi_HRMSAttendanceId", new SqlParameter("@pi_HRMSAttendanceId", id)).SingleOrDefaultAsync();
+                HRMSAttendanceEntry result = await _Context.HRMSAttendanceEntry.FromSql("Exec spHRMSAttendanceEntry @pi_HRMSAttendanceId",
+                    new SqlParameter("@pi_HRMSAttendanceId", id)).SingleOrDefaultAsync();
                 return result;
             }
             catch (Exception ex)
@@ -75,8 +76,9 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     , @pi_WeekEndOff
                     , @pi_Holiday
                     , @pi_Absent
-                    , @pi_Status
-                    , @pi_Remarks
+                    , @pi_IsValid
+                    , @pi_PayrollStatus
+                    , @pi_DayStatusId
                     , @pi_Active
                     , @pi_UserId
                     , @pi_HostName
@@ -94,8 +96,9 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                                 new SqlParameter("@pi_WeekEndOff", pModel.WeekEndOff) ,
                                 new SqlParameter("@pi_Holiday", pModel.Holiday) ,
                                 new SqlParameter("@pi_Absent", pModel.Absent) ,
-                                new SqlParameter("@pi_Status", pModel.Status) ,
-                                new SqlParameter("@pi_Remarks", pModel.Remarks) ,
+                                new SqlParameter("@pi_IsValid", pModel.IsValid) ,
+                                new SqlParameter("@pi_PayrollStatus", pModel.PayrollStatus) ,
+                                new SqlParameter("@pi_DayStatusId", pModel.DayStatusId) ,
                                 new SqlParameter("@pi_Active", pModel.Active) ,
                                 new SqlParameter("@pi_UserId", pModel.AuditColumns.UserId) ,
                                 new SqlParameter("@pi_HostName", pModel.AuditColumns.HostName) ,
@@ -141,8 +144,9 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                     , @pi_WeekEndOff
                     , @pi_Holiday
                     , @pi_Absent
-                    , @pi_Status
-                    , @pi_Remarks
+                    , @pi_IsValid
+                    , @pi_PayrollStatus
+                    , @pi_DayStatusId
                     , @pi_Active
                     , @pi_UserId
                     , @pi_HostName
@@ -161,8 +165,9 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
                                 new SqlParameter("@pi_WeekEndOff", pModel.WeekEndOff) ,
                                 new SqlParameter("@pi_Holiday", pModel.Holiday) ,
                                 new SqlParameter("@pi_Absent", pModel.Absent) ,
-                                new SqlParameter("@pi_Status", pModel.Status) ,
-                                new SqlParameter("@pi_Remarks", pModel.Remarks) ,
+                                new SqlParameter("@pi_IsValid", pModel.IsValid) ,
+                                new SqlParameter("@pi_PayrollStatus", pModel.PayrollStatus) ,
+                                new SqlParameter("@pi_DayStatusId", pModel.DayStatusId) ,
                                 new SqlParameter("@pi_Active", pModel.Active) ,
                                 new SqlParameter("@pi_UserId", pModel.AuditColumns.UserId) ,
                                 new SqlParameter("@pi_HostName", pModel.AuditColumns.HostName) ,
@@ -191,8 +196,59 @@ namespace ConcreteCore.HRMS.Admin.Recruitment
             return result;
         }
 
-        
+        public SQLResult BulkCopy(DataTable table)
+        {
+            SQLResult result = new SQLResult();
+            try
+            {
+                using (SqlConnection destinationConnection =
+                (SqlConnection)_Context.Database.GetDbConnection())
 
+                {
+                    // open the connection
+                    destinationConnection.Open();
 
+                    using (SqlBulkCopy bulkCopy =
+                         new SqlBulkCopy(destinationConnection.ConnectionString,
+                         SqlBulkCopyOptions.KeepIdentity))
+
+                    {
+                        bulkCopy.DestinationTableName = "HRMSAttendanceTempLog";
+                        bulkCopy.BulkCopyTimeout = 15;
+                        bulkCopy.ColumnMappings.Add(new SqlBulkCopyColumnMapping("HRMSEmployeeId", "mHRMSEmployeeId"));
+                        bulkCopy.ColumnMappings.Add(new SqlBulkCopyColumnMapping("AttendanceDateTime", "AttendanceDateTime"));
+                        bulkCopy.ColumnMappings.Add(new SqlBulkCopyColumnMapping("UserCR", "UserCR"));
+                        bulkCopy.ColumnMappings.Add(new SqlBulkCopyColumnMapping("MACAddressCR", "MACAddressCR"));
+                        bulkCopy.ColumnMappings.Add(new SqlBulkCopyColumnMapping("HostNameCR", "HostNameCR"));
+                        bulkCopy.ColumnMappings.Add(new SqlBulkCopyColumnMapping("IPAddressCR", "IPAddressCR"));
+                        bulkCopy.ColumnMappings.Add(new SqlBulkCopyColumnMapping("DeviceTypeCR", "DeviceTypeCR"));
+                        bulkCopy.ColumnMappings.Add(new SqlBulkCopyColumnMapping("DateCR", "DateCR"));
+
+                       if(_Context.Database.ExecuteSqlCommand("TRUNCATE TABLE [HRMSAttendanceTempLog]") == 0)
+                        {
+                            result.ErrorNo = 9999999999;
+                            result.ErrorMessage = "Unable to truncate Temp log table";
+                            return result;
+                        }
+                        bulkCopy.WriteToServerAsync(table);
+                    }
+
+                }
+             
+                return result;
+            }
+            catch (Exception ex)
+            {
+                result.ErrorNo = 9999999999;
+                result.ErrorMessage = ex.Message.ToString();
+                result.SQLErrorNumber = ex.HResult;
+                result.SQLErrorMessage = ex.Source.ToString();
+                return result;
+            }
+        }
     }
+            
 }
+
+
+ 
